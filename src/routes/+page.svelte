@@ -1,7 +1,4 @@
 <script>
-	import { PortableText } from '@portabletext/svelte';
-	import Quote from '../lib/Components/Quote.svelte';
-
 	export let data;
 	console.log(data.questions);
 	const questions = data.questions;
@@ -11,8 +8,8 @@
 	{#each questions as question}
 		<div class="mb-6">
 			<li class="font-semibold">{question.name}</li>
-			<div class="ml-2">
-				<PortableText value={question.description} components={{ block: { blockquote: Quote } }} />
+			<div class="ml-2 text-gray-500">
+				{question.description}
 			</div>
 			<div class="text-blue-800">
 				{question.answers}
