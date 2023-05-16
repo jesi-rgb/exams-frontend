@@ -24,15 +24,23 @@ export const actions: Actions = {
 	default: async (action) => {
 		let data = await action.request.formData();
 
-		console.log(action);
-		console.log(data);
+		const bloque: string = data.get('Bloque') as string;
+		const tema: string = data.get('Tema') as string;
 
-		const title: string = data.get('title') as string;
-		const description: string = data.get('description') as string;
-		const answers: number = data.get('answers') as string;
+		const title: string = data.get('Título') as string;
+		const description: string = data.get('Descripción') as string;
+		const answers: number = data.get('Respuestas') as string;
 
-		const id = title.replaceAll(' ', '-');
-		console.log(title, description, answers, id);
+		const formattedTitle = title
+			.toLowerCase()
+			.replaceAll(/[^a-z ]/g, '')
+			.replaceAll(' ', '-');
+
+		const formattedBloque = bloque.toLowerCase().trim();
+		const formattedTema = `tema${tema}`;
+
+		const id = [formattedBloque, formattedTema, formattedTitle].join('.');
+		console.log(id);
 
 		const question: Question = {
 			_id: id,
@@ -43,8 +51,8 @@ export const actions: Actions = {
 		};
 
 		// client.delete({ query: '*[_type == "question"][0...999]' }).then((res) => console.log(res));
-		console.log(`lolz created question: ${question}`);
-
+		// console.log(`lolz created question: ${question}`);
+		//
 		client.createIfNotExists(question).then((res) => {
 			console.log(`item created with id ${question._id}`);
 			console.log(res);
