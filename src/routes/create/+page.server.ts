@@ -14,8 +14,10 @@ const client = createClient({
 type Question = {
 	_id: string;
 	_type: string;
+	bloque: string;
+	tema: number;
 	name: string;
-	description?: Array<Object>;
+	description?: string;
 	answers: number;
 	correct_answer: number;
 };
@@ -53,9 +55,9 @@ export const actions: Actions = {
 		// client.delete({ query: '*[_type == "question"][0...999]' }).then((res) => console.log(res));
 		// console.log(`lolz created question: ${question}`);
 		//
-		client.createIfNotExists(question).then((res) => {
-			console.log(`item created with id ${question._id}`);
-			console.log(res);
-		});
+		// client.createIfNotExists(question).then((res) => {
+		// 	console.log(`item created with id ${question._id}`);
+		// 	console.log(res);
+		// });
 	}
 };
