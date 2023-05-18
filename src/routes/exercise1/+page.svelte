@@ -6,7 +6,7 @@
 
 <Steps current={1} total={8} />
 
-<div class="text-3xl font-semibold font-serif">Ejercicio 1</div>
+<div class="text-3xl font-semibold tracking-tight font-serif">Ejercicio 1</div>
 
 <!-- ENUNCIADO -->
 <div class="mb-20 mt-10 pb-5 border-b border-primary">
@@ -14,7 +14,7 @@
 		En los siguientes ejemplos aparecen distintos tipos de <span class="text-primary font-bold"
 			>que</span
 		>. Indique en el recuadro si
-		<span class="text-primary font-bold">que</span> es un pronombre relativo o una conjunción
+		<span class="text-primary font-bold">que</span> es un pronombre relativo o una conjunción.
 	</div>
 </div>
 

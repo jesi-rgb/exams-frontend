@@ -5,7 +5,7 @@ const config = {
 		extend: {
 			fontFamily: {
 				sans: ['PP Object Sans', 'Helvetica', 'serif'],
-				serif: ['Zodiak', 'serif']
+				serif: ['Source Serif Pro', 'serif']
 			}
 		}
 	},
