@@ -513,7 +513,7 @@ array-union@^2.1.0:
   resolved "https://registry.npmjs.org/array-union/-/array-union-2.1.0.tgz"
   integrity sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==
 
-autoprefixer@^10.4.7:
+autoprefixer@^10.0.2, autoprefixer@^10.4.7:
   version "10.4.14"
   resolved "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.14.tgz"
   integrity sha512-FQzyfOsTlwVzjHxKEqRIAdJx9niO6VCBCoEwax/VLSoQF29ggECcPuBqUMZ+u8jCZOPSy8b8/8KnuFbp0SaFZQ==
@@ -632,10 +632,26 @@ color-convert@^2.0.1:
   dependencies:
     color-name "~1.1.4"
 
-color-name@~1.1.4:
+color-name@^1.0.0, color-name@~1.1.4:
   version "1.1.4"
   resolved "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
+
+color-string@^1.9.0:
+  version "1.9.1"
+  resolved "https://registry.npmjs.org/color-string/-/color-string-1.9.1.tgz"
+  integrity sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg==
+  dependencies:
+    color-name "^1.0.0"
+    simple-swizzle "^0.2.2"
+
+color@^4.2:
+  version "4.2.3"
+  resolved "https://registry.npmjs.org/color/-/color-4.2.3.tgz"
+  integrity sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==
+  dependencies:
+    color-convert "^2.0.1"
+    color-string "^1.9.0"
 
 commander@^4.0.0:
   version "4.1.1"
@@ -666,10 +682,28 @@ cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
+css-selector-tokenizer@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.npmjs.org/css-selector-tokenizer/-/css-selector-tokenizer-0.8.0.tgz"
+  integrity sha512-Jd6Ig3/pe62/qe5SBPTN8h8LeUg/pT4lLgtavPf7updwwHpvFzxvOQBHYj2LZDMjUnBzgvIUSjRcf6oT5HzHFg==
+  dependencies:
+    cssesc "^3.0.0"
+    fastparse "^1.1.2"
+
 cssesc@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
+
+daisyui@^2.51.6:
+  version "2.51.6"
+  resolved "https://registry.npmjs.org/daisyui/-/daisyui-2.51.6.tgz"
+  integrity sha512-JRqOKayuFCmWe4X4k6Qvx1y7V/VNao8U5eTSOhusOKIzCsYqf56+TCSe4d7zmqGE0V6JiLDYAT8JeoWUeRKFCw==
+  dependencies:
+    color "^4.2"
+    css-selector-tokenizer "^0.8.0"
+    postcss-js "^4.0.0"
+    tailwindcss "^3"
 
 debug@^4.0.0, debug@^4.1.1, debug@^4.3.1, debug@^4.3.2, debug@^4.3.4:
   version "4.3.4"
@@ -988,6 +1022,11 @@ fast-levenshtein@^2.0.6:
   resolved "https://registry.npmjs.org/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz"
   integrity sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==
 
+fastparse@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/fastparse/-/fastparse-1.1.2.tgz"
+  integrity sha512-483XLLxTVIwWK3QTrMGRqUfUpoOs/0hbQrl2oz4J0pAcm3A3bu84wxTFqGqkJzewCLdME38xJLJAxBABfQT8sQ==
+
 fastq@^1.6.0:
   version "1.15.0"
   resolved "https://registry.npmjs.org/fastq/-/fastq-1.15.0.tgz"
@@ -1240,6 +1279,11 @@ into-stream@^6.0.0:
   dependencies:
     from2 "^2.3.0"
     p-is-promise "^3.0.0"
+
+is-arrayish@^0.3.1:
+  version "0.3.2"
+  resolved "https://registry.npmjs.org/is-arrayish/-/is-arrayish-0.3.2.tgz"
+  integrity sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==
 
 is-binary-path@~2.1.0:
   version "2.1.0"
@@ -1898,7 +1942,7 @@ postcss-import@^15.1.0:
     read-cache "^1.0.0"
     resolve "^1.1.7"
 
-postcss-js@^4.0.1:
+postcss-js@^4.0.0, postcss-js@^4.0.1:
   version "4.0.1"
   resolved "https://registry.npmjs.org/postcss-js/-/postcss-js-4.0.1.tgz"
   integrity sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==
@@ -1946,7 +1990,7 @@ postcss-value-parser@^4.0.0, postcss-value-parser@^4.2.0:
   resolved "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
-"postcss@^7 || ^8", postcss@^8.0.0, postcss@^8.1.0, postcss@^8.2.14, postcss@^8.3.3, postcss@^8.4.14, postcss@^8.4.21, postcss@^8.4.23, postcss@^8.4.5, postcss@>=8.0.9:
+"postcss@^7 || ^8", postcss@^8.0.0, postcss@^8.1.0, postcss@^8.1.6, postcss@^8.2.14, postcss@^8.3.3, postcss@^8.4.14, postcss@^8.4.21, postcss@^8.4.23, postcss@^8.4.5, postcss@>=8.0.9:
   version "8.4.23"
   resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.23.tgz"
   integrity sha512-bQ3qMcpF6A/YjR55xtoTr0jGOlnPOKAIMdOWiv0EIT6HVPEaJiJB4NLljSbiHoC2RX7DN5Uvjtpbg1NPdwv1oA==
@@ -2281,6 +2325,13 @@ shebang-regex@^3.0.0:
   resolved "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
+simple-swizzle@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/simple-swizzle/-/simple-swizzle-0.2.2.tgz"
+  integrity sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==
+  dependencies:
+    is-arrayish "^0.3.1"
+
 sirv@^2.0.2:
   version "2.0.3"
   resolved "https://registry.npmjs.org/sirv/-/sirv-2.0.3.tgz"
@@ -2415,7 +2466,7 @@ svelte@^3.2.0, svelte@^3.23.0, svelte@^3.37.0, svelte@^3.47.0, svelte@^3.54.0, s
   resolved "https://registry.npmjs.org/svelte/-/svelte-3.59.1.tgz"
   integrity sha512-pKj8fEBmqf6mq3/NfrB9SLtcJcUvjYSWyePlfCqN9gujLB25RitWK8PvFzlwim6hD/We35KbPlRteuA6rnPGcQ==
 
-tailwindcss@^3.1.5:
+tailwindcss@^3, tailwindcss@^3.1.5:
   version "3.3.2"
   resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.3.2.tgz"
   integrity sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==

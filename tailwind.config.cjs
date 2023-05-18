@@ -1,11 +1,21 @@
 const config = {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+  content: ['./src/**/*.{html,js,svelte,ts}'],
 
-	theme: {
-		extend: {}
-	},
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter'],
+        serif: ['Source Serif Pro']
+      }
+    }
+  },
 
-	plugins: []
+  plugins: [require('daisyui')],
+  daisyui: {
+    logs: false,
+    darkTheme: 'halloween',
+    lightTheme: 'corporate'
+  }
 };
 
 module.exports = config;
