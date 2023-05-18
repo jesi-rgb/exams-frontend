@@ -15,7 +15,7 @@
 		complementos directos o complementos indirectos o indíquelo marcando la casilla <span
 			class="inline-block self-center"
 		>
-			<input type="checkbox" class="checkbox" checked /></span
+			<input type="checkbox" class="checkbox checkbox-xs checkbox-primary" checked /></span
 		> en caso de que no haya.
 	</div>
 </div>
@@ -27,25 +27,25 @@
 			<div class="flex flex-col">
 				<p class="w-3/4">No podía decirle la verdad.</p>
 				<div class="flex flex-col">
-					<div class="flex justify-start space-x-5">
+					<div class="flex space-x-5">
 						<div>
 							<label for="CD">CD</label>
 							<input id="CD" type="text" class="input input-primary input-xs" />
 						</div>
 						<div class="self-end">
-							<input type="checkbox" id="none" />
+							<input type="checkbox" class="checkbox checkbox-xs checkbox-primary" id="none" />
 							<label for="none">No hay</label>
 						</div>
 					</div>
 
 					<div class="flex flex-col">
-						<div class="flex justify-start space-x-5">
+						<div class="flex space-x-5">
 							<div>
 								<label for="CI" class="mr-[9px]">CI</label>
 								<input id="CI" type="text" class="input input-primary input-xs" />
 							</div>
 							<div class="self-end">
-								<input type="checkbox" id="none" />
+								<input type="checkbox" class="checkbox checkbox-xs checkbox-primary" id="none" />
 								<label for="none">No hay</label>
 							</div>
 						</div>
@@ -55,18 +55,60 @@
 		</li>
 		<li>
 			<div class="flex flex-col">
-				<p class="w-3/4">No podía decirle la verdad.</p>
-				<div class="flex justify-between">
-					<div>
-						<label for="CD">CD</label>
-						<input id="CD" type="text" class="input input-primary input-xs" />
-						<label for="CI">CI</label>
-						<input id="CI" type="text" class="input input-primary input-xs" />
+				<p class="w-3/4">¿Qué le compraste al final?</p>
+				<div class="flex flex-col">
+					<div class="flex space-x-5">
+						<div>
+							<label for="CD">CD</label>
+							<input id="CD" type="text" class="input input-primary input-xs" />
+						</div>
+						<div class="self-end">
+							<input type="checkbox" class="checkbox checkbox-xs checkbox-primary" id="none" />
+							<label for="none">No hay</label>
+						</div>
 					</div>
 
-					<div>
-						<input type="checkbox" id="none" />
-						<label for="none">No hay</label>
+					<div class="flex flex-col">
+						<div class="flex space-x-5">
+							<div>
+								<label for="CI" class="mr-[9px]">CI</label>
+								<input id="CI" type="text" class="input input-primary input-xs" />
+							</div>
+							<div class="self-end">
+								<input type="checkbox" class="checkbox checkbox-xs checkbox-primary" id="none" />
+								<label for="none">No hay</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="flex flex-col">
+				<p class="w-3/4">Se le ha caído el sombrero.</p>
+				<div class="flex flex-col">
+					<div class="flex space-x-5">
+						<div>
+							<label for="CD">CD</label>
+							<input id="CD" type="text" class="input input-primary input-xs" />
+						</div>
+						<div class="self-end">
+							<input type="checkbox" class="checkbox checkbox-xs checkbox-primary" id="none" />
+							<label for="none">No hay</label>
+						</div>
+					</div>
+
+					<div class="flex flex-col">
+						<div class="flex space-x-5">
+							<div>
+								<label for="CI" class="mr-[9px]">CI</label>
+								<input id="CI" type="text" class="input input-primary input-xs" />
+							</div>
+							<div class="self-end">
+								<input type="checkbox" class="checkbox checkbox-xs checkbox-primary" id="none" />
+								<label for="none">No hay</label>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

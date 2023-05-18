@@ -40,11 +40,13 @@
 	</ol>
 </div>
 
-<div class="flex justify-end mt-10">
-	<button class="btn btn-primary">
-		<div class="flex space-x-3 items-center">
-			<p>Continuar</p>
-			<ArrowRight weight="bold" size={20} />
-		</div>
-	</button>
-</div>
+<a href="/exercise2">
+	<div class="flex justify-end mt-10">
+		<button class="btn btn-primary">
+			<div class="flex space-x-3 items-center">
+				<p>Continuar</p>
+				<ArrowRight weight="bold" size={20} />
+			</div>
+		</button>
+	</div>
+</a>

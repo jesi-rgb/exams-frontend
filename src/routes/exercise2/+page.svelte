@@ -26,6 +26,8 @@
 	/>
 </div>
 
-<div class="flex justify-end mt-10">
-	<ContinueButton />
-</div>
+<a href="/exercise3">
+	<div class="flex justify-end mt-10">
+		<ContinueButton />
+	</div>
+</a>
