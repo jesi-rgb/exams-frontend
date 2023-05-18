@@ -8,6 +8,6 @@
 
 <Steps current={exerciseNumber} total={8} />
 
-<div class="text-3xl font-semibold font-serif">Ejercicio {exerciseNumber}</div>
+<div class="text-3xl font-semibold font-serif mb-10">Ejercicio {exerciseNumber}</div>
 
 <slot />
