@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Enunciado from '$lib/Components/ui/subtipo1/Enunciado.svelte';
 	import Options from '$lib/Components/ui/subtipo1/Options.svelte';
+	import QuestionT1 from '$lib/Components/ui/subtipo1/QuestionT1.svelte';
 	import type { QuestionType1 } from '$lib/types/QuestionType1.js';
 
 	export let data;
@@ -8,27 +9,4 @@
 	const questions: Array<QuestionType1> = data.questions;
 </script>
 
-<ul class="list-decimal">
-	{#each questions as question, i}
-		<li class="mb-10">
-			<div>Bloque: {question.bloque}</div>
-			<div>Tema: {question.tema}</div>
-			<div class="font-bold font-serif">{`Ejercicio ${i + 1}`}</div>
-			<Enunciado body={question.enunciado} termino={question.termino} />
-
-			<ol class="list-inside list-decimal">
-				{#each question.oraciones as oracion}
-					<li>
-						<div class="flex justify-between">
-							<p>
-								{oracion}
-							</p>
-
-							<Options options={question.opciones} />
-						</div>
-					</li>
-				{/each}
-			</ol>
-		</li>
-	{/each}
-</ul>
+<QuestionT1 questions={data.questions} />
