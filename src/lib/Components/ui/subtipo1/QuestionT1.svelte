@@ -1,5 +1,7 @@
 <script lang="ts">
 	import type { QuestionType1 } from '$lib/types/QuestionType1';
+	import ExerciseDetails from '../ExerciseDetails.svelte';
+	import ExerciseTitle from '../ExerciseTitle.svelte';
 	import AnswerField from './AnswerField.svelte';
 	import Enunciado from './Enunciado.svelte';
 	import Options from './Options.svelte';
@@ -12,11 +14,8 @@
 <ul class="list-none">
 	{#each questions as question, i}
 		<li class="mb-32">
-			<div class="font-bold font-serif text-3xl mb-5">{`Ejercicio ${i + 1}`}</div>
-			<div class="flex space-x-5 text-sm">
-				<div><b>Bloque</b>: {question.bloque}</div>
-				<div><b>Tema</b>: {question.tema}</div>
-			</div>
+			<ExerciseTitle number={i + 1} />
+			<ExerciseDetails bloque={question.bloque} tema={question.tema} />
 			<Enunciado body={question.enunciado} termino={question.termino} />
 
 			<AnswerField
