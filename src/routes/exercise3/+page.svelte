@@ -11,10 +11,10 @@
 <div class="text-3xl font-semibold tracking-tight font-serif">Ejercicio 3</div>
 
 <!-- ENUNCIADO -->
-<div class="mb-20 mt-10 pb-5 border-b border-primary">
+<div class="mb-20 mt-10 pb-5 border-b border-primary tracking-wide">
 	<div>
 		Introduzca en los recuadros correspondientes las secuencias de palabras que funcionan como
-		complementos directos o complementos indirectos o indíquelo marcando la casilla <span
+		complementos directos o complementos indirectos o marque la casilla <span
 			class="inline-block self-center"
 		>
 			<input type="checkbox" class="checkbox checkbox-xs checkbox-primary" checked /></span

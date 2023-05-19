@@ -1,5 +1,5 @@
-<script>
-	export let options = ['relativo', 'conjunción'];
+<script lang="ts">
+	export let options: Array<string>;
 </script>
 
 <select class="select select-sm select-primary">

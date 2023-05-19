@@ -1,6 +1,7 @@
 <script>
 	import Steps from '$lib/Components/ui/Steps.svelte';
 	import ListItem from '$lib/Components/ui/subtipo1/ListItem.svelte';
+	import Options from '$lib/Components/ui/subtipo1/Options.svelte';
 	import { ArrowRight } from 'phosphor-svelte';
 </script>
 
@@ -26,7 +27,7 @@
 				<p class="w-3/4">
 					El chico <span class="text-primary font-bold">que</span> llegó tarde era mi hermano.
 				</p>
-				<ListItem options={['relativo', 'conjunción']} />
+				<Options options={['relativo', 'conjunción']} />
 			</div>
 		</li>
 		<li>
@@ -34,7 +35,7 @@
 				<p class="w-3/4">
 					El hecho de <span class="text-primary font-bold">que</span> no te guste no legitima tu actuación.
 				</p>
-				<ListItem options={['relativo', 'conjunción']} />
+				<Options options={['relativo', 'conjunción']} />
 			</div>
 		</li>
 	</ol>

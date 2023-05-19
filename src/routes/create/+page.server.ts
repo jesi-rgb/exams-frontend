@@ -11,7 +11,7 @@ const client = createClient({
 	useCdn: true
 });
 
-type Question = {
+export type Question = {
 	_id: string;
 	_type: string;
 	bloque: string;
