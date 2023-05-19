@@ -2,6 +2,8 @@
 	import Steps from '$lib/Components/ui/Steps.svelte';
 	import ListItem from '$lib/Components/ui/subtipo1/ListItem.svelte';
 	import { ArrowRight } from 'phosphor-svelte';
+
+	let checked = false;
 </script>
 
 <Steps current={3} total={8} />
@@ -30,11 +32,16 @@
 					<div class="flex space-x-5">
 						<div>
 							<label for="CD">CD</label>
-							<input id="CD" type="text" class="input input-primary input-xs" />
+							<input id="CD" type="text" disabled={checked} class="input input-primary input-xs" />
 						</div>
 						<div class="self-end">
-							<input type="checkbox" class="checkbox checkbox-xs checkbox-primary" id="none" />
-							<label for="none">No hay</label>
+							<input
+								type="checkbox"
+								bind:checked
+								class="checkbox checkbox-xs checkbox-primary"
+								id="none-1"
+							/>
+							<label for="none-1">No hay</label>
 						</div>
 					</div>
 
