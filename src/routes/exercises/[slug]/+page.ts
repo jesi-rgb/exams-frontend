@@ -1,5 +1,4 @@
 import { error } from '@sveltejs/kit';
-import { construct_svelte_component } from 'svelte/internal';
 
 export async function load({ params, fetch }) {
   // const promise: Promise = await fetch('https://random-word-api.vercel.app/api');
@@ -56,7 +55,7 @@ export async function load({ params, fetch }) {
   console.log('fetching data...', data);
 
   if (typeof parseInt(params.slug) === 'number') {
-    return { number: parseInt(params.slug), word: newWord[0] };
+    return { number: parseInt(params.slug), question: data };
   }
 
   throw error(404, 'Not found');
