@@ -57,6 +57,20 @@ export async function load() {
       _id: '3d79a2ae-5097-4784-a114-d8b20576a989',
       termino: 'que',
       _updatedAt: '2023-05-19T09:06:39Z'
+    },
+    {
+      _createdAt: '2023-05-20T16:57:58Z',
+      _id: 'e05a524f-d1d5-404b-b246-b42d4ab29c5c',
+      _rev: 'nWPy2hQK9yVs9pkgY2GkIr',
+      _type: 'subtipo3',
+      bloque: 'Sintaxis',
+      description:
+        'Indique por qué no se puede hacer una oración pasiva refleja a partir de la oración Eligieron a los trabajadores mejor cualificados',
+      name: 'Ejercicio 1',
+      respuesta:
+        'El argumento P, u OD de la construcción activa, tiene referente humano. Salvo contadas excepciones, la pasiva refleja promociona a sujeto argumentos inanimados. ',
+      tema: 'El uso del lenguaje',
+      _updatedAt: '2023-05-20T16:58:29.724Z'
     }
   ];
   if (data) {

@@ -3,7 +3,7 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'PP Object Sans', 'Helvetica', 'serif'],
+        sans: ['Atkinson Hyperlegible', 'Inter', 'PP Object Sans', 'Helvetica', 'serif'],
         serif: ['Source Serif Pro', 'serif']
       }
     }
@@ -17,11 +17,13 @@ const config = {
       {
         dark: {
           ...require('daisyui/src/colors/themes')['[data-theme=dark]'],
-          primary: '#FFF',
+          primary: '#EEEDDD',
           'primary-focus': '#999999',
           'primary-content': '#2A303C',
-          secondary: '#aaa',
-          'base-content': '#CCC'
+          secondary: '#AAA',
+          'secondary-content': '#2A303C',
+          'base-content': '#CCC',
+          'base-100': '#2A303C'
         }
       }
     ]

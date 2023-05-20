@@ -2,7 +2,7 @@
 	import { ArrowLeft } from 'phosphor-svelte';
 </script>
 
-<button class="btn btn-primary">
+<button class="btn btn-secondary">
 	<div class="flex space-x-3 items-center">
 		<ArrowLeft weight="bold" size={20} />
 		<p>Anterior</p>

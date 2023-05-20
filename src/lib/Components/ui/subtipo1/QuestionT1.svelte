@@ -1,27 +1,17 @@
 <script lang="ts">
-	import type { QuestionType1 } from '$lib/types/QuestionType1';
-	import ExerciseDetails from '../ExerciseDetails.svelte';
-	import ExerciseTitle from '../ExerciseTitle.svelte';
+	import type { QuestionType1 } from '$lib/types/QuestionTypes';
 	import AnswerField from './AnswerField.svelte';
 	import Enunciado from './Enunciado.svelte';
 
-	export let questions: Array<QuestionType1>;
+	export let question: QuestionType1;
 
-	console.log(questions[0].oraciones);
+	console.log(question);
 </script>
 
-<ul class="list-none">
-	{#each questions as question, i}
-		<li class="mb-32">
-			<ExerciseTitle number={i + 1} />
-			<ExerciseDetails bloque={question.bloque} tema={question.tema} />
-			<Enunciado body={question.enunciado} termino={question.termino} />
+<Enunciado body={question.enunciado} termino={question.termino} />
 
-			<AnswerField
-				oraciones={question.oraciones}
-				opciones={question.opciones}
-				termino={question.termino}
-			/>
-		</li>
-	{/each}
-</ul>
+<AnswerField
+	oraciones={question.oraciones}
+	opciones={question.opciones}
+	termino={question.termino}
+/>

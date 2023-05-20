@@ -16,7 +16,11 @@
 	console.log(exerciseNumber, nextExercise, previousExercise, totalQuestions);
 </script>
 
-<Steps current={exerciseNumber} total={8} />
+<svelte:head>
+	<title>Ejercicio {exerciseNumber.toString()} – Ejercicios Gramática</title>
+</svelte:head>
+
+<Steps current={exerciseNumber} total={totalQuestions} />
 
 <ExerciseTitle number={exerciseNumber.toString()} />
 <ExerciseDetails bloque={data.question.bloque} tema={data.question.tema} />
@@ -25,12 +29,12 @@
 
 <div class="flex mt-20 justify-between">
 	{#if data.number > 1}
-		<a target="_self" class="self-start" href={`/exercises/${previousExercise}`}>
+		<a target="_self" href={`/exercises/${previousExercise}`}>
 			<PreviousButton />
 		</a>
 	{/if}
 	{#if data.number < totalQuestions}
-		<a target="_self" class="self-end" href={`/exercises/${nextExercise}`}>
+		<a target="_self" href={`/exercises/${nextExercise}`}>
 			<ContinueButton />
 		</a>
 	{/if}

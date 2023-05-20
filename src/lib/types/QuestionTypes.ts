@@ -10,9 +10,10 @@ export interface QuestionType1 extends Question {
   termino: string;
   oraciones: Array<string>;
   opciones: Array<string>;
+  respuestas: Array<string>;
 }
 
 // respuesta abierta para escribir libremente
-export interface QuestionType2 extends Question {
+export interface QuestionType3 extends Question {
   respuesta: string;
 }
