@@ -4,7 +4,6 @@
 	import ExerciseTitle from '../ExerciseTitle.svelte';
 	import AnswerField from './AnswerField.svelte';
 	import Enunciado from './Enunciado.svelte';
-	import Options from './Options.svelte';
 
 	export let questions: Array<QuestionType1>;
 

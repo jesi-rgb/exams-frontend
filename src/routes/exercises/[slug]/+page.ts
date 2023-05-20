@@ -1,9 +1,8 @@
 import { error } from '@sveltejs/kit';
 
 export async function load({ params, fetch }) {
-  // const promise: Promise = await fetch('https://random-word-api.vercel.app/api');
-  // const newWord = await promise.json();
-
+  // this data should only come from a store, not api calls
+  // otherwise we fucking die
   const data = [
     {
       opciones: ['conjunción', 'relativo'],
@@ -52,10 +51,13 @@ export async function load({ params, fetch }) {
     }
   ];
 
-  console.log('fetching data...', data);
+  const totalQuestions = data.length;
 
   if (typeof parseInt(params.slug) === 'number') {
-    return { number: parseInt(params.slug), question: data };
+    //the slug contains a number
+
+    const question = data[parseInt(params.slug) - 1];
+    return { number: parseInt(params.slug), total: totalQuestions, question: question };
   }
 
   throw error(404, 'Not found');
