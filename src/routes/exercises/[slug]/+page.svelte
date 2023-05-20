@@ -6,6 +6,7 @@
 	export let data;
 	const type = data.question._type;
 
+	//aqui irían cosa
 	console.log(data, type);
 </script>
 
