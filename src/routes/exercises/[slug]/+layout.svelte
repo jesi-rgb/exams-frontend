@@ -2,6 +2,7 @@
 	import ContinueButton from '$lib/Components/ui/ContinueButton.svelte';
 	import ExerciseDetails from '$lib/Components/ui/ExerciseDetails.svelte';
 	import ExerciseTitle from '$lib/Components/ui/ExerciseTitle.svelte';
+	import FinishButton from '$lib/Components/ui/FinishButton.svelte';
 	import PreviousButton from '$lib/Components/ui/PreviousButton.svelte';
 	import Steps from '$lib/Components/ui/Steps.svelte';
 	export let data;
@@ -33,6 +34,11 @@
 	{#if data.number < totalQuestions}
 		<a target="_self" href={`/exercises/${nextExercise}`}>
 			<ContinueButton />
+		</a>
+	{/if}
+	{#if data.number == totalQuestions}
+		<a target="_self" href={`/exercises/results`}>
+			<FinishButton />
 		</a>
 	{/if}
 </div>
