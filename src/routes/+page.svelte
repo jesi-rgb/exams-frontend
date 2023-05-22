@@ -7,7 +7,7 @@
 		Plataforma de autoevaluación en contenido de gramática.
 	</div>
 
-	<button class="btn btn-primary">
-		<a href="/exercises"> TESTS </a>
-	</button>
+	<a href="/exercises">
+		<div class="btn btn-primary">TESTS</div>
+	</a>
 </div>

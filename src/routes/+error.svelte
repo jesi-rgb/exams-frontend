@@ -8,12 +8,13 @@
 	<div class="text-center text-3xl mb-3">Ups! Parece que esta página no existe.</div>
 	<div class="text-center text-2xl text-secondary mb-5">¿Volvemos al inicio?</div>
 	<div class="text-center text-xl text-secondary-focus">{$page.status}: {$page.error.message}</div>
-	<button class="btn btn-outline btn-lg btn-primary flex mx-auto my-20"
-		><a href="/"
-			><div class="flex space-x-2 items-center">
+
+	<a href="/">
+		<button class="btn btn-outline btn-lg btn-primary flex mx-auto my-20">
+			<div class="flex space-x-2 items-center">
 				<House size={20} weight="fill" />
 				<p>Inicio</p>
-			</div></a
-		></button
-	>
+			</div>
+		</button>
+	</a>
 </div>
