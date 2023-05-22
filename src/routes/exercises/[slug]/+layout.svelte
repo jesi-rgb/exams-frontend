@@ -6,14 +6,11 @@
 	import Steps from '$lib/Components/ui/Steps.svelte';
 	export let data;
 
-	console.log('layout', data);
 	const totalQuestions = data.total;
 
 	const exerciseNumber = data.number;
 	const nextExercise = (exerciseNumber + 1).toString();
 	const previousExercise = (exerciseNumber - 1).toString();
-
-	console.log(exerciseNumber, nextExercise, previousExercise, totalQuestions);
 </script>
 
 <svelte:head>

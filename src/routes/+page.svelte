@@ -6,4 +6,8 @@
 	<div class="text-center text-secondary text-xl">
 		Plataforma de autoevaluación en contenido de gramática.
 	</div>
+
+	<button class="btn btn-primary">
+		<a href="/exercises"> TESTS </a>
+	</button>
 </div>

@@ -12,7 +12,6 @@ import { data } from '$lib/utils/data';
 // "Ejercicio N", actual content is rendered in page.ts
 
 export function load({ params }) {
-  console.log(data);
   const totalQuestions = data.length;
 
   if (typeof parseInt(params.slug) === 'number') {

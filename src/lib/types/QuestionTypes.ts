@@ -1,7 +1,9 @@
 interface Question {
+  numero: string;
   bloque: string;
   tema: string;
   enunciado: string;
+  respuesta: Object;
 }
 
 // formato con un término específico a analizar
