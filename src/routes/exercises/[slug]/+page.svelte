@@ -13,5 +13,5 @@
 {:else if type === 'subtipo2'}
 	<QuestionT2 question={data.question} />
 {:else if type === 'subtipo3'}
-	<QuestionT3 question={data.question} />
+	<QuestionT3 {data} />
 {/if}

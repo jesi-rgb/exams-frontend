@@ -1,11 +1,23 @@
 <script lang="ts">
-	import type { QuestionType3 } from '$lib/types/QuestionTypes';
+	import { respuestas } from '../../../../stores';
+
 	import Enunciado from '../subtipo3/Enunciado.svelte';
 
-	export let question: QuestionType3;
-	console.log('hi from q3 component');
+	export let data;
+	const qNumber = data.number;
+
+	if ($respuestas[qNumber] === 'undefined') {
+		$respuestas[qNumber] = '';
+	}
+	//
 </script>
 
-<Enunciado enunciado={question.enunciado} />
+<Enunciado enunciado={data.question.enunciado} />
 
-<textarea name="respuesta" id="respuesta" class="textarea textarea-bordered textarea-lg w-full" />
+<textarea
+	on:change={(e) => ($respuestas[qNumber] = e.target.value)}
+	name="respuesta"
+	id="respuesta"
+	value={$respuestas[qNumber] == undefined ? '' : $respuestas[qNumber]}
+	class="textarea textarea-bordered textarea-lg w-full"
+/>

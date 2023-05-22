@@ -5,7 +5,8 @@
 	export let qNumber: number; // question we are in
 	export let idSelect: number; // sentence we are in within the question
 
-	console.log('AAAAAAA', qNumber, $respuestas);
+	// if it's the first time we go into the question,
+	// we initialize the global object with this question's number
 	if ($respuestas[qNumber] === undefined) {
 		$respuestas[qNumber] = {};
 	}
@@ -17,9 +18,6 @@
 		const value = e.target?.value;
 
 		$respuestas[qNumber][idSelect] = value;
-		// respuestas.update((r) => (r[qNumber][idSelect] = value));
-
-		console.log('saving result', $respuestas);
 	}}
 	class="select select-sm select-primary"
 >
