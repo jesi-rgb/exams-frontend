@@ -1,5 +1,5 @@
 <script>
-	import { ArrowRight, Check } from 'phosphor-svelte';
+	import Check from 'phosphor-svelte/lib/Check';
 </script>
 
 <button class="btn btn-primary">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowLeft } from 'phosphor-svelte';
+	import ArrowLeft from 'phosphor-svelte/lib/ArrowLeft';
 </script>
 
 <button class="btn btn-secondary">

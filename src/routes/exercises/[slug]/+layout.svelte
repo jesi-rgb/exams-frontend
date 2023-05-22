@@ -29,7 +29,7 @@
 <Steps current={exerciseNumber} total={totalQuestions} />
 
 {#if visible}
-	<div in:fly={{ y: 20, duration: 300, easing: cubicOut }}>
+	<div in:fly={{ y: 20, duration: 1000, easing: cubicOut }}>
 		<ExerciseTitle number={exerciseNumber.toString()} />
 		<ExerciseDetails bloque={data.question.bloque} tema={data.question.tema} />
 

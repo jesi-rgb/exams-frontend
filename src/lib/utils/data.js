@@ -10,6 +10,7 @@ export const data = [
     enunciado:
       'En los siguientes ejemplos aparecen distintos tipos de la. Indique en el recuadro si la es un pronombre relativo o una conjunción',
     oraciones: ['La pegué con duda.', 'Juan la come.'],
+    respuesta: ['relativo', 'relativo'],
     _updatedAt: '2023-05-19T10:23:42Z',
     bloque: 'Sintaxis'
   },
@@ -23,6 +24,7 @@ export const data = [
     _createdAt: '2023-05-19T10:19:45Z',
     enunciado: 'En los siguientes ejemplos aparece algo como yeah. ¿Qué es? No lo sabremos jamás.',
     oraciones: ['Yeah perdonen kamekameha', 'Oooooo ma gaaa oh yeah'],
+    respuesta: ['relativo', 'conjunción'],
     _updatedAt: '2023-05-19T10:23:42Z',
     bloque: 'Sintaxis'
   },
@@ -36,6 +38,7 @@ export const data = [
       'El chico que llegó tarde era mi hermano',
       'El hecho de que no te guste no legitima tu actuación.'
     ],
+    respuesta: ['conjunción', 'conjunción'],
     bloque: 'Sintaxis',
     enunciado:
       'En los siguientes ejemplos aparecen distintos tipos de que. Indique en el recuadro si que es un pronombre relativo o una conjunción.',

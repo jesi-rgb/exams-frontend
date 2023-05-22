@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Editor from '$lib/Components/Editor.svelte';
 	import FormField from '$lib/Components/FormField.svelte';
-	import { ArrowLeft } from 'phosphor-svelte';
+	import ArrowLeft from 'phosphor-svelte/lib/ArrowLeft';
 
 	let innerHTML: string;
 </script>
