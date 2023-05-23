@@ -17,6 +17,7 @@
 </script>
 
 <EnunciadoT2 enunciado={question.enunciado} />
+
 <ol>
 	{#each oraciones as q, j}
 		<li>
@@ -44,10 +45,12 @@
 									bind:checked={checkedMap[`${j}.${i}`]}
 									class="checkbox checkbox-xs checkbox-primary"
 									on:change={(e) => {
+										// we make sure that,
+										// if the user clicks on the checkbox,
+										// we erase the input field
 										const value = e.target.checked;
 										if (value) {
 											const inputField = document.getElementById(`input-${j}.${i}`);
-											console.log(inputField);
 											inputField.value = '';
 										}
 										console.log(e);
