@@ -2,7 +2,7 @@
 	import Check from 'phosphor-svelte/lib/Check';
 	import X from 'phosphor-svelte/lib/X';
 
-	export let results: Array<boolean>;
+	export let results; // user answers. two fields: bool and answer
 	export let question;
 
 	const oraciones = question.oraciones;
@@ -25,12 +25,14 @@
 					</div>
 					<div
 						class="tooltip tooltip-primary"
-						data-tip={`La respuesta correcta es ${respuestas[i]}`}
+						data-tip={`La respuesta correcta es ${respuestas[i]}, tu respuesta fue ${
+							results[i].answer == 'none' ? 'dejada en blanco' : results[i].answer
+						}`}
 					>
 						<div class="flex items-center space-x-3">
-							<div class={results[i] ? 'text-success' : 'text-error'}>{respuestas[i]}</div>
-							<div class={results[i] ? 'text-success' : 'text-error'}>
-								{#if results[i]}
+							<div class={results[i].bool ? 'text-success' : 'text-error'}>{respuestas[i]}</div>
+							<div class={results[i].bool ? 'text-success' : 'text-error'}>
+								{#if results[i].bool}
 									<Check weight="bold" />
 								{:else}
 									<X weight="bold" />

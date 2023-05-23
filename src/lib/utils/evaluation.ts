@@ -12,7 +12,7 @@ export function evaluation(questions, respuestas) {
     switch (questions[i]._type) {
       case 'subtipo1':
         const booleans: Array<boolean> = realAnswer.map((a: string, index: number) => {
-          return a === userAnswerObject[index];
+          return { bool: a === userAnswerObject[index], answer: userAnswerObject[index] };
         });
         evaluation[i] = booleans;
         break;

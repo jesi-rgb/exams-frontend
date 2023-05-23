@@ -59,5 +59,26 @@ export const data = [
       'El argumento P, u OD de la construcción activa, tiene referente humano. Salvo contadas excepciones, la pasiva refleja promociona a sujeto argumentos inanimados. ',
     tema: 'El uso del lenguaje',
     _updatedAt: '2023-05-20T16:58:29.724Z'
+  },
+  {
+    _createdAt: '2023-05-23T16:13:07Z',
+    _id: '0c66b426-d62e-490d-97c0-83375ed86bbf',
+    _rev: 'nTFm2VscxOrnKR8oz9ZJxZ',
+    _type: 'subtipo2',
+    bloque: 'Sintaxis',
+    enunciado:
+      'Introduzca en los recuadros correspondientes las secuencias de palabras que funcionan como complementos directos o complementos indirectos o marque la casilla en caso de que no haya.',
+    name: 'E.Abierto "no podía decirle la verdad"',
+    oraciones: [
+      'No podía decirle la verdad.',
+      '¿Qué le compraste al final?',
+      'Se le ha caído el sombrero.',
+      'Disculpen, señores, no les había reconocido.',
+      'La mujer de mi oficina a la que le regalaron el libro es vecina mía.'
+    ],
+    respuesta: ['la verdad;le', 'qué;le', 'le;0', 'les;0', 'el libro;a la que'],
+    tema: 'El uso del lenguaje',
+    opciones: ['Complemento Directo', 'Complemento Indirecto'],
+    _updatedAt: '2023-05-23T16:26:21.740Z'
   }
 ];

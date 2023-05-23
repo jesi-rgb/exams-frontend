@@ -51,14 +51,14 @@
 	<ul>
 		{#each questions as q, i}
 			<li class="mb-12">
-				<div class="flex justify-start space-x-3 items-center">
+				<div class="flex justify-start space-x-3 items-center mb-1">
 					<NotePencil weight="fill" size={25} />
-					<div class="text-xl font-bold">
+					<div class="text-xl font-medium">
 						{`Ejercicio ${i + 1}`}
 					</div>
 					<!-- <div class="text-secondary text-sm self-end">{q._type}</div> -->
 				</div>
-				<div class="mb-2 text-base text-secondary">{q.enunciado}</div>
+				<div class="mb-5 text-base text-secondary">{q.enunciado}</div>
 				{#if q._type === 'subtipo1'}
 					<ResultsT1 results={evaluated[i]} question={q} />
 				{:else if q._type === 'subtipo2'}
