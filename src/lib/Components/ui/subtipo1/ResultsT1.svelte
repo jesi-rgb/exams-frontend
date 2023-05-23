@@ -23,14 +23,19 @@
 							{o}
 						</div>
 					</div>
-					<div class="flex items-center space-x-3">
-						<div class={results[i] ? 'text-success' : 'text-error'}>{respuestas[i]}</div>
-						<div class={results[i] ? 'text-success' : 'text-error'}>
-							{#if results[i]}
-								<Check weight="bold" />
-							{:else}
-								<X weight="bold" />
-							{/if}
+					<div
+						class="tooltip tooltip-primary"
+						data-tip={`La respuesta correcta es ${respuestas[i]}`}
+					>
+						<div class="flex items-center space-x-3">
+							<div class={results[i] ? 'text-success' : 'text-error'}>{respuestas[i]}</div>
+							<div class={results[i] ? 'text-success' : 'text-error'}>
+								{#if results[i]}
+									<Check weight="bold" />
+								{:else}
+									<X weight="bold" />
+								{/if}
+							</div>
 						</div>
 					</div>
 				</div>

@@ -20,7 +20,7 @@
 <div class="text-5xl mb-5 font-bold">Resultados</div>
 
 <div class="mb-10">
-	<details open>
+	<details>
 		<summary class="text-xl cursor-pointer font-bold text-primary">
 			Cómo interpretar los resultados
 		</summary>
