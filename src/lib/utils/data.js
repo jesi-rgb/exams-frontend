@@ -53,7 +53,7 @@ export const data = [
     _type: 'subtipo3',
     bloque: 'Sintaxis',
     enunciado:
-      'Indique por qué no se puede hacer una oración pasiva refleja a partir de la oración Eligieron a los trabajadores mejor cualificados',
+      'Indique por qué no se puede hacer una oración pasiva refleja a partir de la oración: Eligieron a los trabajadores mejor cualificados',
     name: 'Ejercicio 1',
     respuesta:
       'El argumento P, u OD de la construcción activa, tiene referente humano. Salvo contadas excepciones, la pasiva refleja promociona a sujeto argumentos inanimados. ',

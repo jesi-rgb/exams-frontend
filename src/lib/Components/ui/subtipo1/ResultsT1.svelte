@@ -1,0 +1,40 @@
+<script lang="ts">
+	import Check from 'phosphor-svelte/lib/Check';
+	import X from 'phosphor-svelte/lib/X';
+
+	export let results: Array<boolean>;
+	export let question;
+
+	const oraciones = question.oraciones;
+	const respuestas = question.respuesta;
+
+	console.log(results);
+</script>
+
+<!-- here we are rendering a single sentence from the subtype1 exercise -->
+<div>
+	<ul>
+		{#each oraciones as o, i}
+			<li class="list-item">
+				<div class="flex justify-between items-end space-x-3">
+					<div class="w-3/4 flex items-baseline space-x-3">
+						<div>{i + 1}.</div>
+						<div>
+							{o}
+						</div>
+					</div>
+					<div class="flex items-center space-x-3">
+						<div class={results[i] ? 'text-success' : 'text-error'}>{respuestas[i]}</div>
+						<div class={results[i] ? 'text-success' : 'text-error'}>
+							{#if results[i]}
+								<Check weight="bold" />
+							{:else}
+								<X weight="bold" />
+							{/if}
+						</div>
+					</div>
+				</div>
+			</li>
+		{/each}
+	</ul>
+</div>
