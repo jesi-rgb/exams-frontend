@@ -55,11 +55,10 @@
 		{#each questions as q, i}
 			<li class="mb-12">
 				<div class="flex justify-start space-x-3 items-center mb-1">
-					<NotePencil weight="fill" size={25} />
-					<div class="text-xl font-medium">
+					<NotePencil class="text-primary" weight="fill" size={25} />
+					<div class="text-xl font-bold">
 						{`Ejercicio ${i + 1}`}
 					</div>
-					<!-- <div class="text-secondary text-sm self-end">{q._type}</div> -->
 				</div>
 
 				<div class="pb-3 border-b border-secondary">
