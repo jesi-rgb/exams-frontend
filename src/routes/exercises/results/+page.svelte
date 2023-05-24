@@ -5,6 +5,7 @@
 	import ResultsT1 from '$lib/Components/ui/subtipo1/ResultsT1.svelte';
 	import ResultsT3 from '$lib/Components/ui/subtipo3/ResultsT3.svelte';
 	import { CaretDoubleDown, NotePencil, PencilLine } from 'phosphor-svelte';
+	import ResultsT2 from '$lib/Components/ui/subtipo2/ResultsT2.svelte';
 
 	export let data;
 
@@ -20,7 +21,7 @@
 <div class="text-5xl mb-5 font-bold">Resultados</div>
 
 <div class="mb-10">
-	<details open>
+	<details>
 		<summary class="text-xl cursor-pointer font-bold text-primary">
 			Cómo interpretar los resultados
 		</summary>
@@ -64,7 +65,7 @@
 				{#if q._type === 'subtipo1'}
 					<ResultsT1 results={evaluated[i]} question={q} />
 				{:else if q._type === 'subtipo2'}
-					<div>nothing</div>
+					<ResultsT2 results={evaluated[i]} question={q} />
 				{:else if q._type === 'subtipo3'}
 					<div />
 					<ResultsT3 results={evaluated[i]} question={q} />

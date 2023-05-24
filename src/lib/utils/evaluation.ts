@@ -11,13 +11,20 @@ export function evaluation(questions, respuestas) {
 
     switch (questions[i]._type) {
       case 'subtipo1':
-        const booleans: Array<boolean> = realAnswer.map((a: string, index: number) => {
+        const booleansT1: Array<boolean> = realAnswer.map((a: string, index: number) => {
           return { bool: a === userAnswerObject[index], answer: userAnswerObject[index] };
         });
-        evaluation[i] = booleans;
+        evaluation[i] = booleansT1;
         break;
       case 'subtipo2':
-        console.log('not defined');
+        const parsedRealAnswers = realAnswer.map((x: string) => x.split(';')).flat();
+        const booleansT2 = parsedRealAnswers.map((x: string, i: number) => {
+          return {
+            bool: Object.values(userAnswerObject)[i] === x.trim(),
+            answer: Object.values(userAnswerObject)[i]
+          };
+        });
+        evaluation[i] = booleansT2;
         break;
       case 'subtipo3':
         evaluation[i] = userAnswerObject; // this should be a string

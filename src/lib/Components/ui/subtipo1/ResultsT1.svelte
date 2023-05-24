@@ -7,8 +7,6 @@
 
 	const oraciones = question.oraciones;
 	const respuestas = question.respuesta;
-
-	console.log(results);
 </script>
 
 <!-- here we are rendering a single sentence from the subtype1 exercise -->
