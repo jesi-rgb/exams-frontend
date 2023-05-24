@@ -61,15 +61,18 @@
 					</div>
 					<!-- <div class="text-secondary text-sm self-end">{q._type}</div> -->
 				</div>
-				<div class="mb-5 text-base text-secondary">{q.enunciado}</div>
-				{#if q._type === 'subtipo1'}
-					<ResultsT1 results={evaluated[i]} question={q} />
-				{:else if q._type === 'subtipo2'}
-					<ResultsT2 results={evaluated[i]} question={q} />
-				{:else if q._type === 'subtipo3'}
-					<div />
-					<ResultsT3 results={evaluated[i]} question={q} />
-				{/if}
+
+				<div class="pb-3 border-b border-secondary">
+					<div class="mb-5 text-secondary">{q.enunciado}</div>
+					{#if q._type === 'subtipo1'}
+						<ResultsT1 results={evaluated[i]} question={q} />
+					{:else if q._type === 'subtipo2'}
+						<ResultsT2 results={evaluated[i]} question={q} />
+					{:else if q._type === 'subtipo3'}
+						<div />
+						<ResultsT3 results={evaluated[i]} question={q} />
+					{/if}
+				</div>
 
 				<!-- <div class="italic">{JSON.stringify(answers[i + 1])}</div> -->
 			</li>
