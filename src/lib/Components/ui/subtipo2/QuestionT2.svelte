@@ -1,11 +1,15 @@
 <script lang="ts">
 	import Enunciado from '../subtipo1/Enunciado.svelte';
 	import EnunciadoT2 from './EnunciadoT2.svelte';
+	import { respuestas } from '../../../../stores';
+	import { onMount } from 'svelte';
 
 	export let data;
 	const question = data.question;
 	const opciones = question.opciones;
 	const oraciones = question.oraciones;
+	const qNumber = data.number;
+
 	console.log(data);
 
 	let checkedMap: Object<string, boolean> = {};
@@ -13,6 +17,25 @@
 		opciones.map((y: string, i: number) => {
 			checkedMap[`${j}.${i}`] = false;
 		});
+	});
+
+	if ($respuestas[qNumber] === undefined) {
+		$respuestas[qNumber] = {};
+	}
+
+	onMount(() => {
+		if ($respuestas[qNumber] !== undefined) {
+			Object.keys($respuestas[qNumber]).map((k) => {
+				console.log(k);
+				const inputField = document.getElementById(`input-${k}`);
+
+				if (inputField && $respuestas[qNumber][k])
+					inputField.value = $respuestas[qNumber][k] !== '0' ? $respuestas[qNumber][k] : '';
+				else console.log(inputField);
+
+				$respuestas[qNumber][k] === '0' ? (checkedMap[k] = true) : (checkedMap[k] = false);
+			});
+		}
 	});
 </script>
 
@@ -32,12 +55,22 @@
 				<div class="flex flex-col">
 					{#each opciones as o, i}
 						<div class="flex justify-between items-center mb-2 space-x-5">
-							<label class="text-sm text-right w-1/3" for={`input-${j}.${i}`}>{o}</label>
+							<label class="text-sm w-1/3" for={`input-${j}.${i}`}>{o}</label>
 							<input
 								id={`input-${j}.${i}`}
 								type="text"
+								value={$respuestas[qNumber][`${j}.${i}`] === undefined
+									? ''
+									: $respuestas[qNumber][`${j}.${i}`] === '0'
+									? ''
+									: $respuestas[qNumber][`${j}.${i}`]}
 								disabled={checkedMap[`${j}.${i}`]}
 								class="input input-primary input-sm w-1/3"
+								on:change={(e) => {
+									console.log(e);
+									const inputField = e.target;
+									$respuestas[qNumber][`${j}.${i}`] = inputField.value.trim();
+								}}
 							/>
 							<div class="self-end">
 								<input
@@ -51,9 +84,9 @@
 										const value = e.target.checked;
 										if (value) {
 											const inputField = document.getElementById(`input-${j}.${i}`);
+											$respuestas[qNumber][`${j}.${i}`] = '0';
 											inputField.value = '';
 										}
-										console.log(e);
 									}}
 									id={`check-${j}.${i}`}
 								/>

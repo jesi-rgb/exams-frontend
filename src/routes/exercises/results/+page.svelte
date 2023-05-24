@@ -20,30 +20,32 @@
 <div class="text-5xl mb-5 font-bold">Resultados</div>
 
 <div class="mb-10">
-	<details>
+	<details open>
 		<summary class="text-xl cursor-pointer font-bold text-primary">
 			Cómo interpretar los resultados
 		</summary>
-		<p>
-			Se presentan aquí los resultados de las preguntas en contraste con las respuestas
-			canónicamente correctas.
+		<div class="py-3 px-4 rounded-xl border-2 border-primary flex-col space-y-5">
+			<p>
+				En esta página se puede hacer una autoevaluación de la prueba, contrastando las respuestas
+				con las soluciones ofrecidas por los profesores que crearon las preguntas.
+			</p>
+			<p class="">
+				<span class="inline-block">
+					<CaretDoubleDown weight="fill" />
+				</span>
+				En los ejercicios de elección por desplegable o tipo de respuesta exacta, la respuesta correcta
+				se presenta al lado de la oración a la que corresponde. El color de la respuesta indica si se
+				ha elegido correctamente o no.
+			</p>
 
-			<br />
-			<br />
-			<span class="inline-block">
-				<CaretDoubleDown weight="fill" />
-			</span>
-			En los ejercicios de elección por desplegable, la respuesta correcta se presenta al lado de la
-			oración a la que corresponde. El color de la respuesta indica si se ha elegido correctamente o
-			no.
-
-			<br /><br />
-			<span class="inline-flex">
-				<PencilLine weight="fill" />
-			</span>
-			En los ejercicios de respuesta abierta, es tarea del estudiante contrastar su respuesta con la
-			provista como <i>correcta</i>.
-		</p>
+			<p>
+				<span class="inline-flex">
+					<PencilLine weight="fill" />
+				</span>
+				En los ejercicios de respuesta abierta, es tarea del estudiante contrastar su respuesta con la
+				provista como <i>correcta</i>.
+			</p>
+		</div>
 	</details>
 </div>
 
