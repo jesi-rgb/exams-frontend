@@ -10,18 +10,17 @@
 	const oraciones = question.oraciones;
 	const qNumber = data.number;
 
-	console.log(data);
+	if ($respuestas[qNumber] === undefined) {
+		$respuestas[qNumber] = {};
+	}
 
 	let checkedMap: Object<string, boolean> = {};
 	oraciones.map((x: string, j: number) => {
 		opciones.map((y: string, i: number) => {
 			checkedMap[`${j}.${i}`] = false;
+			$respuestas[qNumber][`${j}.${i}`] = '';
 		});
 	});
-
-	if ($respuestas[qNumber] === undefined) {
-		$respuestas[qNumber] = {};
-	}
 
 	onMount(() => {
 		if ($respuestas[qNumber] !== undefined) {

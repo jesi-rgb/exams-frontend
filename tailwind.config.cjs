@@ -3,7 +3,15 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Open Sauce Sans', 'Atkinson Hyperlegible', 'Inter', 'Helvetica', 'serif'],
+        sans: [
+          'Figtree',
+          'Readex Pro',
+          'Open Sauce Sans',
+          'Atkinson Hyperlegible',
+          'Inter',
+          'Helvetica',
+          'serif'
+        ],
         serif: ['Source Serif Pro', 'serif']
       }
     }

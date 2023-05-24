@@ -20,6 +20,17 @@
 
 	let visible: boolean = false;
 	onMount(() => (visible = true));
+
+	function handleKeydown(e: KeyboardEvent) {
+		if (e.key === 'ArrowRight') {
+			e.preventDefault();
+			window.location.href = `/exercises/${nextExercise}`;
+		}
+		if (e.key === 'ArrowLeft') {
+			e.preventDefault();
+			window.location.href = `/exercises/${previousExercise}`;
+		}
+	}
 </script>
 
 <svelte:head>
@@ -54,3 +65,5 @@
 		</div>
 	</div>
 {/if}
+
+<svelte:window on:keydown={handleKeydown} />
