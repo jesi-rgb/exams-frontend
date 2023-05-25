@@ -10,6 +10,8 @@ import { data } from '$lib/utils/data';
 // same thing will be done in page.ts
 // in fact, here we only load the index of the question to show
 // "Ejercicio N", actual content is rendered in page.ts
+//
+// test change
 
 export function load({ params }) {
   const urlTopic = params.topic;
