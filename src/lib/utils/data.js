@@ -12,7 +12,7 @@ export const data = [
     oraciones: ['La pegué con duda.', 'Juan la come.'],
     respuesta: ['relativo', 'relativo'],
     _updatedAt: '2023-05-19T10:23:42Z',
-    bloque: 'Sintaxis'
+    bloque: 'Morfología'
   },
   {
     opciones: ['conjunción', 'relativo'],
@@ -26,7 +26,7 @@ export const data = [
     oraciones: ['Yeah perdonen kamekameha', 'Oooooo ma gaaa oh yeah'],
     respuesta: ['relativo', 'conjunción'],
     _updatedAt: '2023-05-19T10:23:42Z',
-    bloque: 'Sintaxis'
+    bloque: 'Morfología'
   },
   {
     opciones: ['conjunción', 'relativo'],

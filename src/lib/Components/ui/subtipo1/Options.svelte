@@ -20,7 +20,7 @@
 
 		$respuestas[qNumber][idSelect] = value;
 	}}
-	class="select select-sm select-primary"
+	class="select select-md md:select-sm select-primary"
 >
 	{#each options as opt}
 		<option selected={$respuestas[qNumber][idSelect] == opt} value={opt}>{opt}</option>

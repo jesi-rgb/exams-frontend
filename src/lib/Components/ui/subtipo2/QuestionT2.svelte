@@ -18,7 +18,9 @@
 	oraciones.map((x: string, j: number) => {
 		opciones.map((y: string, i: number) => {
 			checkedMap[`${j}.${i}`] = false;
-			$respuestas[qNumber][`${j}.${i}`] = '';
+			if ($respuestas[qNumber][`${j}.${i}`] === undefined) {
+				$respuestas[qNumber][`${j}.${i}`] = '';
+			}
 		});
 	});
 
@@ -53,7 +55,7 @@
 				<!-- mega div con etiqueta, input field y checkbox-->
 				<div class="flex flex-col">
 					{#each opciones as o, i}
-						<div class="flex justify-between items-center mb-2 space-x-5">
+						<div class="flex justify-between items-center mb-2">
 							<label class="text-sm w-1/3" for={`input-${j}.${i}`}>{o}</label>
 							<input
 								id={`input-${j}.${i}`}
@@ -71,11 +73,11 @@
 									$respuestas[qNumber][`${j}.${i}`] = inputField.value.trim();
 								}}
 							/>
-							<div class="self-end">
+							<div class="flex flex-col xl:flex-row items-center space-x-2">
 								<input
 									type="checkbox"
 									bind:checked={checkedMap[`${j}.${i}`]}
-									class="checkbox checkbox-xs checkbox-primary"
+									class="checkbox checkbox-xs md:checkbox-sm checkbox-primary"
 									on:change={(e) => {
 										// we make sure that,
 										// if the user clicks on the checkbox,
@@ -89,7 +91,7 @@
 									}}
 									id={`check-${j}.${i}`}
 								/>
-								<label for={`check-${j}.${i}`}>No hay</label>
+								<label class="text-sm md:text-base" for={`check-${j}.${i}`}>No hay</label>
 							</div>
 						</div>
 					{/each}

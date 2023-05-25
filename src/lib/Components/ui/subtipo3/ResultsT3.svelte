@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { FileDashed } from 'phosphor-svelte';
 	import Check from 'phosphor-svelte/lib/Check';
 	import PencilLine from 'phosphor-svelte/lib/PencilLine';
 
@@ -19,5 +20,12 @@
 		<PencilLine weight="fill" />
 		<div class="font-bold">Tu respuesta:</div>
 	</div>
-	<div class="italic">{results}</div>
+	{#if results === undefined || results === ''}
+		<div class="flex items-center text-error space-x-2">
+			<FileDashed weight="bold" size={22} />
+			<div class="italic">Pregunta sin contestar</div>
+		</div>
+	{:else}
+		<div class="italic">{results}</div>
+	{/if}
 </div>

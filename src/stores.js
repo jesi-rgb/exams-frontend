@@ -1,5 +1,6 @@
 import { persisted } from 'svelte-local-storage-store';
 
+export const data = persisted('data', {});
 export const respuestas = persisted(
   'respuestas',
   {},

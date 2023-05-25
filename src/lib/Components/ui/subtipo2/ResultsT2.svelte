@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Check, X } from 'phosphor-svelte';
+	import { Check, X, FileDashed } from 'phosphor-svelte';
 
 	export let results;
 	export let question;
@@ -26,14 +26,24 @@
 								results[opciones.length * i + j].bool ? 'text-success' : 'text-error'
 							}`}
 						>
+							<!-- correct answer -->
 							<div class="font-bold text-primary text-right">{r === '0' ? 'No hay' : r}</div>
-							<div class="text-secondary">—</div>
-							<div class="w-max">
-								{results[opciones.length * i + j].answer === '0'
-									? 'No hay'
-									: results[2 * i + j].answer}
-							</div>
 
+							<!-- dash -->
+							<div class="text-secondary">—</div>
+
+							<!-- user's answer -->
+							{#if results[opciones.length * i + j].answer === ''}
+								<FileDashed weight="bold" />
+							{:else}
+								<div class="w-max">
+									{results[opciones.length * i + j].answer === '0'
+										? 'No hay'
+										: results[2 * i + j].answer}
+								</div>
+							{/if}
+
+							<!-- check mark or X depending on result -->
 							<div class="w-min">
 								{#if results[opciones.length * i + j].bool}
 									<Check weight="bold" size={22} />

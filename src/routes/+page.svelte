@@ -4,10 +4,11 @@
 <div class="max-w-md mx-auto">
 	<div class="text-center text-primary text-6xl mb-5">Tests Gramática</div>
 	<div class="text-center text-secondary text-xl">
-		Plataforma de autoevaluación en contenido de gramática.
+		EJERCICIOS DE AUTOCOMPROBACIÓN DE GRAMÁTICA AVANZADA DEL ESPAÑOL
 	</div>
-
-	<a href="/exercises">
-		<div class="btn btn-primary">TESTS</div>
-	</a>
+	<div class="mx-auto w-32 mt-10">
+		<a href="/exercises">
+			<div class="btn btn-primary btn-lg w-full">Temas</div>
+		</a>
+	</div>
 </div>

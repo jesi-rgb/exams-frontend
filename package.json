@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
+		"host": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -45,6 +46,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sanity/block-tools": "^3.11.0",
-		"@sanity/client": "^6.0.1"
+		"@sanity/client": "^6.0.1",
+		"unidecode": "^0.1.8"
 	}
 }

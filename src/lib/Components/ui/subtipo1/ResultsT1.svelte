@@ -22,8 +22,8 @@
 						</div>
 					</div>
 					<div
-						class="tooltip tooltip-primary"
-						data-tip={`La respuesta correcta es ${respuestas[i]}, tu respuesta fue ${
+						class="tooltip text-left tooltip-left tooltip-primary"
+						data-tip={` La respuesta correcta es ${respuestas[i]}, tu respuesta fue ${
 							results[i].answer == 'none' ? 'dejada en blanco' : results[i].answer
 						}`}
 					>
