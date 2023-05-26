@@ -57,7 +57,7 @@ export const data = [
     name: 'Ejercicio 1',
     respuesta:
       'El argumento P, u OD de la construcción activa, tiene referente humano. Salvo contadas excepciones, la pasiva refleja promociona a sujeto argumentos inanimados. ',
-    tema: 'El uso del lenguaje',
+    tema: 'El sujeto',
     _updatedAt: '2023-05-20T16:58:29.724Z'
   },
   {
@@ -77,7 +77,7 @@ export const data = [
       'La mujer de mi oficina a la que le regalaron el libro es vecina mía.'
     ],
     respuesta: ['la verdad;le', 'qué;le', 'le;0', 'les;0', 'el libro;a la que'],
-    tema: 'El uso del lenguaje',
+    tema: 'El sujeto',
     opciones: ['Complemento Directo', 'Complemento Indirecto'],
     _updatedAt: '2023-05-23T16:26:21.740Z'
   }

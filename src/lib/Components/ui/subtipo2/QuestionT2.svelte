@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Enunciado from '../subtipo1/Enunciado.svelte';
 	import EnunciadoT2 from './EnunciadoT2.svelte';
 	import { respuestas } from '../../../../stores';
 	import { onMount } from 'svelte';
@@ -9,32 +8,40 @@
 	const opciones = question.opciones;
 	const oraciones = question.oraciones;
 	const qNumber = data.number;
+	const topicUrl = data.topicUrl;
 
-	if ($respuestas[qNumber] === undefined) {
-		$respuestas[qNumber] = {};
+	if ($respuestas[topicUrl] === undefined) {
+		$respuestas[topicUrl] = {};
+	}
+
+	if ($respuestas[topicUrl][qNumber] === undefined) {
+		$respuestas[topicUrl][qNumber] = {};
 	}
 
 	let checkedMap: Object<string, boolean> = {};
 	oraciones.map((x: string, j: number) => {
 		opciones.map((y: string, i: number) => {
 			checkedMap[`${j}.${i}`] = false;
-			if ($respuestas[qNumber][`${j}.${i}`] === undefined) {
-				$respuestas[qNumber][`${j}.${i}`] = '';
+			if ($respuestas[topicUrl][qNumber][`${j}.${i}`] === undefined) {
+				$respuestas[topicUrl][qNumber][`${j}.${i}`] = '';
 			}
 		});
 	});
 
 	onMount(() => {
-		if ($respuestas[qNumber] !== undefined) {
-			Object.keys($respuestas[qNumber]).map((k) => {
+		if ($respuestas[topicUrl][qNumber] !== undefined) {
+			Object.keys($respuestas[topicUrl][qNumber]).map((k) => {
 				console.log(k);
 				const inputField = document.getElementById(`input-${k}`);
 
-				if (inputField && $respuestas[qNumber][k])
-					inputField.value = $respuestas[qNumber][k] !== '0' ? $respuestas[qNumber][k] : '';
+				if (inputField && $respuestas[topicUrl][qNumber][k])
+					inputField.value =
+						$respuestas[topicUrl][qNumber][k] !== '0' ? $respuestas[topicUrl][qNumber][k] : '';
 				else console.log(inputField);
 
-				$respuestas[qNumber][k] === '0' ? (checkedMap[k] = true) : (checkedMap[k] = false);
+				$respuestas[topicUrl][qNumber][k] === '0'
+					? (checkedMap[k] = true)
+					: (checkedMap[k] = false);
 			});
 		}
 	});
@@ -60,17 +67,17 @@
 							<input
 								id={`input-${j}.${i}`}
 								type="text"
-								value={$respuestas[qNumber][`${j}.${i}`] === undefined
+								value={$respuestas[topicUrl][qNumber][`${j}.${i}`] === undefined
 									? ''
-									: $respuestas[qNumber][`${j}.${i}`] === '0'
+									: $respuestas[topicUrl][qNumber][`${j}.${i}`] === '0'
 									? ''
-									: $respuestas[qNumber][`${j}.${i}`]}
+									: $respuestas[topicUrl][qNumber][`${j}.${i}`]}
 								disabled={checkedMap[`${j}.${i}`]}
 								class="input input-primary input-sm w-1/3"
 								on:change={(e) => {
 									console.log(e);
 									const inputField = e.target;
-									$respuestas[qNumber][`${j}.${i}`] = inputField.value.trim();
+									$respuestas[topicUrl][qNumber][`${j}.${i}`] = inputField.value.trim();
 								}}
 							/>
 							<div class="flex flex-col xl:flex-row items-center space-x-2">
@@ -85,7 +92,7 @@
 										const value = e.target.checked;
 										if (value) {
 											const inputField = document.getElementById(`input-${j}.${i}`);
-											$respuestas[qNumber][`${j}.${i}`] = '0';
+											$respuestas[topicUrl][qNumber][`${j}.${i}`] = '0';
 											inputField.value = '';
 										}
 									}}

@@ -9,14 +9,17 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
+	import { error } from '@sveltejs/kit';
 
 	export let data;
 
 	const totalQuestions = data.total;
+	const topicUrl = data.topicUrl;
 
 	const exerciseNumber = data.number;
 	const nextExercise = (exerciseNumber + 1).toString();
 	const previousExercise = (exerciseNumber - 1).toString();
+	console.log(exerciseNumber);
 
 	let visible: boolean = false;
 	onMount(() => (visible = true));
@@ -24,17 +27,17 @@
 	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'ArrowRight') {
 			e.preventDefault();
-			window.location.href = `/exercises/${nextExercise}`;
+			window.location.href = `/exercises/${topicUrl}/${nextExercise}`;
 		}
 		if (e.key === 'ArrowLeft') {
 			e.preventDefault();
-			window.location.href = `/exercises/${previousExercise}`;
+			window.location.href = `/exercises/${topicUrl}/${previousExercise}`;
 		}
 	}
 </script>
 
 <svelte:head>
-	<title>Ejercicio {exerciseNumber.toString()} – Ejercicios Gramática</title>
+	<title>Ejercicio {exerciseNumber.toString()} – {data.question.tema}</title>
 </svelte:head>
 
 <Steps current={exerciseNumber} total={totalQuestions} />
@@ -48,17 +51,17 @@
 
 		<div class="flex mt-20 justify-between">
 			{#if data.number > 1}
-				<a target="_self" href={`/exercises/${previousExercise}`}>
+				<a target="_self" href={`/exercises/${topicUrl}/${previousExercise}`}>
 					<PreviousButton />
 				</a>
 			{/if}
 			{#if data.number < totalQuestions}
-				<a target="_self" href={`/exercises/${nextExercise}`}>
+				<a target="_self" href={`/exercises/${topicUrl}/${nextExercise}`}>
 					<ContinueButton />
 				</a>
 			{/if}
 			{#if data.number == totalQuestions}
-				<a target="_self" href={`/exercises/results`}>
+				<a target="_self" href={`/exercises/${topicUrl}/results`}>
 					<FinishButton />
 				</a>
 			{/if}

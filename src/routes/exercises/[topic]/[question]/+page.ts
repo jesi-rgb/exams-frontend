@@ -19,7 +19,12 @@ export async function load({ params, fetch }) {
     //the slug contains a number
 
     const question = questionSubset[parseInt(params.question) - 1];
-    return { number: parseInt(params.question), total: totalQuestions, question: question };
+    return {
+      topicUrl: urlTopic,
+      number: parseInt(params.question),
+      total: totalQuestions,
+      question: question
+    };
   }
 
   throw error(404, 'Not found');

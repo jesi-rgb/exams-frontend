@@ -32,8 +32,9 @@ export function load({ params }) {
     }
     if (processedData[d.bloque][d.tema] === undefined) {
       processedData[d.bloque][d.tema] = 1;
+    } else {
+      processedData[d.bloque][d.tema] += 1;
     }
-    processedData[d.bloque][d.tema] += 1;
   }
   console.log(processedData);
 

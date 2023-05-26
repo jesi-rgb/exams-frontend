@@ -6,6 +6,7 @@
 	export let opciones: Array<string>;
 	export let termino: string;
 	export let number: number;
+	export let topicUrl: string;
 
 	const oracionesHighlighted = oraciones.map((o) => {
 		return highlightTerm(o, termino);
@@ -20,7 +21,7 @@
 					{@html oracion}
 				</div>
 
-				<Options idSelect={i} qNumber={number} options={opciones} />
+				<Options idSelect={i} {topicUrl} qNumber={number} options={opciones} />
 			</div>
 		</li>
 	{/each}

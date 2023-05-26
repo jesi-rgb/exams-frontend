@@ -5,9 +5,14 @@
 
 	export let data;
 	const qNumber = data.number;
+	const topicUrl = data.topicUrl;
 
-	if ($respuestas[qNumber] === 'undefined') {
-		$respuestas[qNumber] = '';
+	if ($respuestas[topicUrl] === 'undefined') {
+		$respuestas[topicUrl] = '';
+	}
+
+	if ($respuestas[topicUrl][qNumber] === 'undefined') {
+		$respuestas[topicUrl][qNumber] = '';
 	}
 	//
 </script>
@@ -15,9 +20,9 @@
 <Enunciado enunciado={data.question.enunciado} />
 
 <textarea
-	on:change={(e) => ($respuestas[qNumber] = e.target.value)}
+	on:change={(e) => ($respuestas[topicUrl][qNumber] = e.target.value)}
 	name="respuesta"
 	id="respuesta"
-	value={$respuestas[qNumber] == undefined ? '' : $respuestas[qNumber]}
+	value={$respuestas[topicUrl][qNumber] == undefined ? '' : $respuestas[topicUrl][qNumber]}
 	class="textarea textarea-bordered textarea-lg w-full"
 />

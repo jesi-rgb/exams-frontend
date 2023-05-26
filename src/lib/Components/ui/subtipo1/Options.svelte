@@ -4,11 +4,14 @@
 	export let options: Array<string>;
 	export let qNumber: number; // question we are in
 	export let idSelect: number; // sentence we are in within the question
+	export let topicUrl: string;
 
-	// if it's the first time we go into the question,
-	// we initialize the global object with this question's number
-	if ($respuestas[qNumber] === undefined) {
-		$respuestas[qNumber] = Object.fromEntries(options.map((x, i) => [i, 'none']));
+	if ($respuestas[topicUrl] === undefined) {
+		$respuestas[topicUrl] = {};
+	}
+
+	if ($respuestas[topicUrl][qNumber] === undefined) {
+		$respuestas[topicUrl][qNumber] = Object.fromEntries(options.map((x, i) => [i, 'none']));
 	}
 </script>
 
@@ -18,12 +21,14 @@
 		const value = e.target.value;
 		console.log(e, idSelect);
 
-		$respuestas[qNumber][idSelect] = value;
+		$respuestas[topicUrl][qNumber][idSelect] = value;
 	}}
 	class="select select-md md:select-sm select-primary"
 >
 	{#each options as opt}
-		<option selected={$respuestas[qNumber][idSelect] == opt} value={opt}>{opt}</option>
+		<option selected={$respuestas[topicUrl][qNumber][idSelect] == opt} value={opt}>{opt}</option>
 	{/each}
-	<option selected={$respuestas[qNumber][idSelect] === 'none'} value="none">Seleccione</option>
+	<option selected={$respuestas[topicUrl][qNumber][idSelect] === 'none'} value="none"
+		>Seleccione</option
+	>
 </select>

@@ -5,6 +5,10 @@
 	const bloques = Object.keys(data);
 </script>
 
+<svelte:head>
+	<title>Ejercicios de gramática</title>
+</svelte:head>
+
 {#each bloques as bloque}
 	<div class="mb-20">
 		<div class="font-bold text-5xl mb-4 tracking-tight">{bloque}</div>

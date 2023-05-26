@@ -8,6 +8,10 @@
 	export let data;
 	const type = data.question._type;
 
+	if (data.topicUrl === undefined) {
+		throw error('404', 'Not found');
+	}
+
 	let visible = false;
 	onMount(() => (visible = true));
 </script>

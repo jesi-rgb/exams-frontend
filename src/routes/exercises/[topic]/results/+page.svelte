@@ -1,5 +1,5 @@
 <script>
-	import { respuestas } from '../../../stores';
+	import { respuestas } from '../../../../stores';
 	import { evaluation } from '$lib/utils/evaluation';
 	import { onMount } from 'svelte';
 	import ResultsT1 from '$lib/Components/ui/subtipo1/ResultsT1.svelte';
@@ -10,9 +10,11 @@
 	export let data;
 
 	const questions = data.questions;
-	const answers = $respuestas;
+	const topicUrl = data.topicUrl;
 
-	let evaluated = undefined;
+	const answers = $respuestas[topicUrl];
+
+	let evaluated;
 	onMount(() => {
 		evaluated = evaluation(questions, answers);
 	});
@@ -68,15 +70,12 @@
 					{:else if q._type === 'subtipo2'}
 						<ResultsT2 results={evaluated[i]} question={q} />
 					{:else if q._type === 'subtipo3'}
-						<div />
 						<ResultsT3 results={evaluated[i]} question={q} />
 					{/if}
 				</div>
-
-				<!-- <div class="italic">{JSON.stringify(answers[i + 1])}</div> -->
 			</li>
 		{/each}
 	</ul>
 {:else}
-	<div>procesando resultados...</div>
+	<div>Procesando resultados...</div>
 {/if}
