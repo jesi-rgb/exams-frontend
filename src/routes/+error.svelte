@@ -10,5 +10,7 @@
 	<div class="text-center text-2xl text-secondary mb-5">¿Volvemos al inicio?</div>
 	<div class="text-center text-xl text-secondary-focus">{$page.status}: {$page.error.message}</div>
 
-	<HomeButton />
+	<div class="flex justify-center mt-10">
+		<HomeButton />
+	</div>
 </div>
