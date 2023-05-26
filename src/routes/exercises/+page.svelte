@@ -27,7 +27,7 @@
 		<div class="font-bold text-4xl mb-4 tracking-tight">{bloque}</div>
 		{#each Object.keys(data[bloque]) as t}
 			<a href={`/exercises/${unidecode(t).toLowerCase().replaceAll(' ', '-')}/1`}>
-				<div class="flex space-x-3 text-xl mb-2 btn btn-primary justify-between">
+				<div class="flex space-x-3 text-xl mb-2 btn btn-outline justify-between">
 					<div>{t}</div>
 					<div>
 						{data[bloque][t]}
