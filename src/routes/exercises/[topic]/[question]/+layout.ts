@@ -19,6 +19,7 @@ export function load({ params }) {
 
   const urlTopic = params.topic;
 
+  console.log(getDataStore);
   if (getDataStore) {
     const questionSubset = getDataStore.filter((x) => {
       const normalizedTopic = unidecode(x.tema).toLowerCase().replaceAll(' ', '-');
@@ -39,5 +40,5 @@ export function load({ params }) {
     }
   }
 
-  throw error('500', 'Could not load the data');
+  throw error(500, 'Could not load the data');
 }
