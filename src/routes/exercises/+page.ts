@@ -1,4 +1,5 @@
 import { data } from '$lib/utils/data';
+import { respuestas } from '../../stores';
 
 export function load({ params }) {
   // const bloques = [...new Set(data.map((x) => x.bloque))];
@@ -37,6 +38,7 @@ export function load({ params }) {
     }
   }
   console.log(processedData);
+  respuestas.set({});
 
   return processedData;
 }

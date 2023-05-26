@@ -56,9 +56,11 @@
 				</a>
 			{/if}
 			{#if data.number < totalQuestions}
-				<a target="_self" href={`/exercises/${topicUrl}/${nextExercise}`}>
-					<ContinueButton />
-				</a>
+				<div class="place-self-end">
+					<a target="_self" href={`/exercises/${topicUrl}/${nextExercise}`}>
+						<ContinueButton />
+					</a>
+				</div>
 			{/if}
 			{#if data.number == totalQuestions}
 				<a target="_self" href={`/exercises/${topicUrl}/results`}>

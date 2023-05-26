@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { FileDashed } from 'phosphor-svelte';
 	import Check from 'phosphor-svelte/lib/Check';
 	import X from 'phosphor-svelte/lib/X';
 
@@ -24,11 +25,17 @@
 					<div
 						class="tooltip text-left tooltip-left tooltip-primary"
 						data-tip={` La respuesta correcta es ${respuestas[i]}, tu respuesta fue ${
-							results[i].answer == 'none' ? 'dejada en blanco' : results[i].answer
+							results[i].answer === 'none' ? 'dejada en blanco' : results[i].answer
 						}`}
 					>
 						<div class="flex items-center space-x-3">
-							<div class={results[i].bool ? 'text-success' : 'text-error'}>{respuestas[i]}</div>
+							<div class={results[i].bool ? 'text-success' : 'text-error'}>
+								{#if results[i].answer === 'none'}
+									<FileDashed weight="bold" size={22} />
+								{:else}
+									{results[i].answer}
+								{/if}
+							</div>
 							<div class={results[i].bool ? 'text-success' : 'text-error'}>
 								{#if results[i].bool}
 									<Check weight="bold" />

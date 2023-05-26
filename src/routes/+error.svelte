@@ -1,6 +1,7 @@
 <script>
 	import { House } from 'phosphor-svelte';
 	import { page } from '$app/stores';
+	import HomeButton from '$lib/Components/ui/HomeButton.svelte';
 </script>
 
 <div class="my-20">
@@ -9,12 +10,5 @@
 	<div class="text-center text-2xl text-secondary mb-5">¿Volvemos al inicio?</div>
 	<div class="text-center text-xl text-secondary-focus">{$page.status}: {$page.error.message}</div>
 
-	<a href="/">
-		<button class="btn btn-outline btn-lg btn-primary flex mx-auto my-20">
-			<div class="flex space-x-2 items-center">
-				<House size={20} weight="fill" />
-				<p>Inicio</p>
-			</div>
-		</button>
-	</a>
+	<HomeButton />
 </div>
