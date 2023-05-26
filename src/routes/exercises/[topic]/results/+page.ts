@@ -1,14 +1,18 @@
-import { data } from '$lib/utils/data';
 import unidecode from 'unidecode';
+import { data } from '../../../../stores';
+import { get } from 'svelte/store';
 
 export function load({ params }) {
+  const getDataStore = get(data);
   const urlTopic = params.topic;
 
-  const questionSubset = data.filter((x) => {
+  const questionSubset = getDataStore.filter((x) => {
     const normalizedTopic = unidecode(x.tema).toLowerCase().replaceAll(' ', '-');
     return urlTopic === normalizedTopic;
   });
+
   const totalQuestions = questionSubset.length;
+
   return {
     topicUrl: params.topic,
     questions: questionSubset

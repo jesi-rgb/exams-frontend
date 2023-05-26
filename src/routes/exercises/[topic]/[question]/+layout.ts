@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit';
 import unidecode from 'unidecode';
-import { data } from '$lib/utils/data';
+import { data } from '../../../../stores';
+import { get } from 'svelte/store';
 // in params, we have the index of the question:
 // params.slug = 1 -> /exercises/1
 //
@@ -14,14 +15,15 @@ import { data } from '$lib/utils/data';
 // test change
 
 export function load({ params }) {
+  const getDataStore = get(data);
+
   const urlTopic = params.topic;
 
-  const questionSubset = data.filter((x) => {
+  const questionSubset = getDataStore.filter((x) => {
     const normalizedTopic = unidecode(x.tema).toLowerCase().replaceAll(' ', '-');
     return urlTopic === normalizedTopic;
   });
   const totalQuestions = questionSubset.length;
-  console.log(questionSubset, 'layout');
 
   if (typeof parseInt(params.question) === 'number') {
     //the slug contains a number

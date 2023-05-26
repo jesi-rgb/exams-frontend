@@ -1,19 +1,20 @@
 import { error } from '@sveltejs/kit';
 import unidecode from 'unidecode';
-import { data } from '$lib/utils/data';
+import { data } from '../../../../stores';
+import { get } from 'svelte/store';
 
 export async function load({ params, fetch }) {
   // this data should only come from a store, not api calls
   // otherwise we fucking die
 
+  const getDataStore = get(data);
   const urlTopic = params.topic;
 
-  const questionSubset = data.filter((x) => {
+  const questionSubset = getDataStore.filter((x) => {
     const normalizedTopic = unidecode(x.tema).toLowerCase().replaceAll(' ', '-');
     return urlTopic === normalizedTopic;
   });
   const totalQuestions = questionSubset.length;
-  console.log(questionSubset);
 
   if (typeof parseInt(params.question) === 'number') {
     //the slug contains a number

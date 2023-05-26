@@ -22,8 +22,16 @@
 	});
 </script>
 
-<div class="text-5xl mb-5 font-bold">Resultados</div>
+<svelte:head>
+	<title>Resultados — {questions[0].tema}</title>
+</svelte:head>
 
+<div class="mb-5">
+	<div class="text-4xl font-bold mb-1">Resultados</div>
+	<div class="text-2xl text-secondary">
+		Tema: {questions[0].tema}
+	</div>
+</div>
 <div class="mb-10">
 	<details>
 		<summary class="text-xl cursor-pointer font-bold text-primary">
@@ -87,11 +95,10 @@
 			</li>
 		{/each}
 	</ul>
+	<div class="flex space-x-8 justify-end">
+		<TopicsButton />
+		<HomeButton />
+	</div>
 {:else}
 	<div>Procesando resultados...</div>
 {/if}
-
-<div class="flex space-x-8 justify-end">
-	<TopicsButton />
-	<HomeButton />
-</div>
