@@ -20,6 +20,6 @@ export async function load() {
   }
   return {
     status: 500,
-    body: new Error('Internal Server Error')
+    body: new Error('No se pudieron cargar las preguntas.')
   };
 }

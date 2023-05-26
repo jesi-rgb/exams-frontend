@@ -10,6 +10,7 @@
 	import { fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { error } from '@sveltejs/kit';
+	import TopicsButtonSmall from '$lib/Components/ui/TopicsButtonSmall.svelte';
 
 	export let data;
 
@@ -44,6 +45,7 @@
 
 {#if visible}
 	<div in:fly={{ y: 20, duration: 1000, easing: cubicOut }}>
+		<TopicsButtonSmall />
 		<ExerciseTitle number={exerciseNumber.toString()} />
 		<ExerciseDetails bloque={data.question.bloque} tema={data.question.tema} />
 

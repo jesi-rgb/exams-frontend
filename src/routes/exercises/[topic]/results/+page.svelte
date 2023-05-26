@@ -7,6 +7,7 @@
 	import { CaretDoubleDown, FileDashed, NotePencil, PencilLine } from 'phosphor-svelte';
 	import ResultsT2 from '$lib/Components/ui/subtipo2/ResultsT2.svelte';
 	import HomeButton from '$lib/Components/ui/HomeButton.svelte';
+	import TopicsButton from '$lib/Components/ui/TopicsButton.svelte';
 
 	export let data;
 
@@ -90,6 +91,7 @@
 	<div>Procesando resultados...</div>
 {/if}
 
-<div class="flex justify-end">
+<div class="flex space-x-8 justify-end">
+	<TopicsButton />
 	<HomeButton />
 </div>
