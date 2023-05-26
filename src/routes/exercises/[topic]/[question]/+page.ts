@@ -10,23 +10,25 @@ export async function load({ params, fetch }) {
   const getDataStore = get(data);
   const urlTopic = params.topic;
 
-  const questionSubset = getDataStore.filter((x) => {
-    const normalizedTopic = unidecode(x.tema).toLowerCase().replaceAll(' ', '-');
-    return urlTopic === normalizedTopic;
-  });
-  const totalQuestions = questionSubset.length;
+  if (getDataStore) {
+    const questionSubset = getDataStore.filter((x) => {
+      const normalizedTopic = unidecode(x.tema).toLowerCase().replaceAll(' ', '-');
+      return urlTopic === normalizedTopic;
+    });
+    const totalQuestions = questionSubset.length;
 
-  if (typeof parseInt(params.question) === 'number') {
-    //the slug contains a number
+    if (typeof parseInt(params.question) === 'number') {
+      //the slug contains a number
 
-    const question = questionSubset[parseInt(params.question) - 1];
-    return {
-      topicUrl: urlTopic,
-      number: parseInt(params.question),
-      total: totalQuestions,
-      question: question
-    };
+      const question = questionSubset[parseInt(params.question) - 1];
+      return {
+        topicUrl: urlTopic,
+        number: parseInt(params.question),
+        total: totalQuestions,
+        question: question
+      };
+    }
   }
 
-  throw error(404, 'Not found');
+  throw error('500', 'Could not load the data');
 }

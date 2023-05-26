@@ -31,13 +31,11 @@
 	onMount(() => {
 		if ($respuestas[topicUrl][qNumber] !== undefined) {
 			Object.keys($respuestas[topicUrl][qNumber]).map((k) => {
-				console.log(k);
 				const inputField = document.getElementById(`input-${k}`);
 
 				if (inputField && $respuestas[topicUrl][qNumber][k])
 					inputField.value =
 						$respuestas[topicUrl][qNumber][k] !== '0' ? $respuestas[topicUrl][qNumber][k] : '';
-				else console.log(inputField);
 
 				$respuestas[topicUrl][qNumber][k] === '0'
 					? (checkedMap[k] = true)
