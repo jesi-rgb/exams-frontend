@@ -1,6 +1,6 @@
 import { persisted } from 'svelte-local-storage-store';
 
-export const data = persisted('data', undefined);
+export const data = persisted('questions', undefined);
 
 export const lastFetchedData = persisted('lastFetchedData', undefined);
 

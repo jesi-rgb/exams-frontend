@@ -18,6 +18,7 @@ export function load({ params }) {
       topicUrl: params.topic,
       questions: questionSubset
     };
+  } else {
+    throw error(500, 'Could not load the data in results');
   }
-  throw error(500, 'Could not load the data');
 }
