@@ -21,6 +21,7 @@ export async function load({ params, fetch }) {
       //the slug contains a number
 
       const question = questionSubset[parseInt(params.question) - 1];
+      console.log('here page ts');
       return {
         topicUrl: urlTopic,
         number: parseInt(params.question),
@@ -28,7 +29,7 @@ export async function load({ params, fetch }) {
         question: question
       };
     }
+  } else {
+    throw error(500, 'Could not load the data in page.ts');
   }
-
-  throw error('500', 'Could not load the data');
 }

@@ -19,8 +19,8 @@ export function load({ params }) {
 
   const urlTopic = params.topic;
 
-  console.log(getDataStore);
   if (getDataStore) {
+    console.log('here layout ts');
     const questionSubset = getDataStore.filter((x) => {
       const normalizedTopic = unidecode(x.tema).toLowerCase().replaceAll(' ', '-');
       return urlTopic === normalizedTopic;
@@ -38,7 +38,7 @@ export function load({ params }) {
         question: question
       };
     }
+  } else {
+    throw error(500, 'Could not load the data in layout.ts ' + JSON.stringify(get(data)));
   }
-
-  throw error(500, 'Could not load the data');
 }

@@ -1,7 +1,7 @@
 // import { data } from '$lib/utils/data';
 import { createClient } from '@sanity/client';
 import { respuestas, lastFetchedData, data } from '../../stores';
-import { get, writable } from 'svelte/store';
+import { get } from 'svelte/store';
 
 const DAY = 1 * 24 * 60 * 60 * 1000;
 const MINUTE = 60 * 1000;
@@ -25,10 +25,12 @@ export async function load({ params }) {
     const fetchDataFromCms = await client.fetch(
       '*[_type == "subtipo1" || _type == "subtipo2" || _type == "subtipo3"]'
     );
+
     data.set(fetchDataFromCms);
     lastFetchedData.set(new Date().getTime());
   } else {
     console.log('Using cached data. Last fetched:', new Date(get(lastFetchedData)));
+    console.log(get(data));
   }
 
   const processedData = {};
