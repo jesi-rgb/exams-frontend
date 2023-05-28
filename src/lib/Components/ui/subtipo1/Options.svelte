@@ -6,13 +6,12 @@
 	export let idSelect: number; // sentence we are in within the question
 	export let topicUrl: string;
 
-	if ($respuestas[topicUrl] === undefined) {
-		$respuestas[topicUrl] = {};
-	}
+	if ($respuestas[topicUrl] === undefined) $respuestas[topicUrl] = {};
 
-	if ($respuestas[topicUrl][qNumber] === undefined) {
-		$respuestas[topicUrl][qNumber] = Object.fromEntries(options.map((x, i) => [i, 'none']));
-	}
+	if ($respuestas[topicUrl][qNumber] === undefined) $respuestas[topicUrl][qNumber] = {};
+
+	if ($respuestas[topicUrl][qNumber][idSelect] === undefined)
+		$respuestas[topicUrl][qNumber][idSelect] = 'none';
 </script>
 
 <select

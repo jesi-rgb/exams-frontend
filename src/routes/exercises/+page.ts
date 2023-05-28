@@ -30,7 +30,6 @@ export async function load({ params }) {
     lastFetchedData.set(new Date().getTime());
   } else {
     console.log('Using cached data. Last fetched:', new Date(get(lastFetchedData)));
-    console.log(get(data));
   }
 
   const processedData = {};

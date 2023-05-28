@@ -8,6 +8,9 @@
 
 	const oraciones = question.oraciones;
 	const respuestas = question.respuesta;
+	console.log('resultst1 results', results);
+	console.log('resultst1 respuesta', respuestas);
+	console.log('resultst1 oraciones', oraciones);
 </script>
 
 <!-- here we are rendering a single sentence from the subtype1 exercise -->
@@ -15,7 +18,9 @@
 	<ul>
 		{#each oraciones as o, i}
 			<li class="list-item">
-				<div class="flex justify-between items-end space-x-3">
+				<div
+					class="flex justify-between items-end space-x-3 py-2 rounded-xl px-4 transition-colors hover:bg-opacity-5 hover:bg-neutral-100"
+				>
 					<div class="w-3/4 flex items-baseline space-x-3">
 						<div>{i + 1}.</div>
 						<div>

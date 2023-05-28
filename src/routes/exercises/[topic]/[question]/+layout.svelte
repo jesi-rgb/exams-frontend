@@ -14,13 +14,16 @@
 
 	export let data;
 
-	const totalQuestions = data.total;
-	const topicUrl = data.topicUrl;
+	// https://stackoverflow.com/questions/75756247/dynamic-routes-dont-refresh-when-navigation-between-them
+	// finally some answers to this lol
+	$: totalQuestions = data.total;
+	$: topicUrl = data.topicUrl;
 
-	const exerciseNumber = data.number;
-	const nextExercise = (exerciseNumber + 1).toString();
-	const previousExercise = (exerciseNumber - 1).toString();
-	console.log(exerciseNumber);
+	$: exerciseNumber = data.number;
+	$: nextExercise = (exerciseNumber + 1).toString();
+	$: previousExercise = (exerciseNumber - 1).toString();
+	$: question = data.question;
+	console.log('question', question);
 
 	let visible: boolean = false;
 	onMount(() => (visible = true));
@@ -43,28 +46,26 @@
 
 <Steps current={exerciseNumber} total={totalQuestions} />
 
-{#if visible}
+{#if visible && question}
 	<div in:fly={{ y: 20, duration: 1000, easing: cubicOut }}>
 		<TopicsButtonSmall />
 		<ExerciseTitle number={exerciseNumber.toString()} />
-		<ExerciseDetails bloque={data.question.bloque} tema={data.question.tema} />
+		<ExerciseDetails bloque={question.bloque} tema={question.tema} />
 
 		<slot />
 
 		<div class="flex mt-20 justify-between">
-			{#if data.number > 1}
+			{#if exerciseNumber > 1}
 				<a target="_self" href={`/exercises/${topicUrl}/${previousExercise}`}>
 					<PreviousButton />
 				</a>
 			{/if}
-			{#if data.number < totalQuestions}
-				<div class="place-self-end">
-					<a target="_self" href={`/exercises/${topicUrl}/${nextExercise}`}>
-						<ContinueButton />
-					</a>
-				</div>
+			{#if exerciseNumber < totalQuestions}
+				<a target="_self" href={`/exercises/${topicUrl}/${nextExercise}`}>
+					<ContinueButton />
+				</a>
 			{/if}
-			{#if data.number == totalQuestions}
+			{#if exerciseNumber == totalQuestions}
 				<a target="_self" href={`/exercises/${topicUrl}/results`}>
 					<FinishButton />
 				</a>

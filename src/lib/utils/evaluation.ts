@@ -8,10 +8,10 @@ export function evaluation(questions, respuestas) {
     const userAnswerObject = respuestas[i + 1];
 
     const realAnswer = questions[i].respuesta;
-    console.log('************ EVALUATION.TS *****************');
-    console.log(i);
-    console.log(respuestas);
-    console.log(userAnswerObject, realAnswer);
+    // console.log('************ EVALUATION.TS *****************');
+    // console.log(i);
+    // console.log(respuestas);
+    // console.log(userAnswerObject, realAnswer);
 
     switch (questions[i]._type) {
       case 'subtipo1':

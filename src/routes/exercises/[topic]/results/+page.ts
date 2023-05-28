@@ -1,7 +1,7 @@
-import unidecode from 'unidecode';
 import { data } from '../../../../stores';
 import { get } from 'svelte/store';
 import { error } from '@sveltejs/kit';
+import { slugify } from 'transliteration';
 
 export function load({ params }) {
   const getDataStore = get(data);
@@ -9,10 +9,8 @@ export function load({ params }) {
 
   if (getDataStore) {
     const questionSubset = getDataStore.filter((x) => {
-      const normalizedTopic = unidecode(x.tema).toLowerCase().replaceAll(' ', '-');
-      return urlTopic === normalizedTopic;
+      return urlTopic === slugify(x.tema);
     });
-    const totalQuestions = questionSubset.length;
 
     return {
       topicUrl: params.topic,

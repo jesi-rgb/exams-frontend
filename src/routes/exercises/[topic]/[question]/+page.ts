@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
-import unidecode from 'unidecode';
 import { data } from '../../../../stores';
 import { get } from 'svelte/store';
+import { slugify } from 'transliteration';
 
 export async function load({ params, fetch }) {
   // this data should only come from a store, not api calls
@@ -12,8 +12,7 @@ export async function load({ params, fetch }) {
 
   if (getDataStore) {
     const questionSubset = getDataStore.filter((x) => {
-      const normalizedTopic = unidecode(x.tema).toLowerCase().replaceAll(' ', '-');
-      return urlTopic === normalizedTopic;
+      return slugify(x.tema) === urlTopic;
     });
     const totalQuestions = questionSubset.length;
 
@@ -21,6 +20,7 @@ export async function load({ params, fetch }) {
       //the slug contains a number
 
       const question = questionSubset[parseInt(params.question) - 1];
+
       console.log('here page ts');
       return {
         topicUrl: urlTopic,

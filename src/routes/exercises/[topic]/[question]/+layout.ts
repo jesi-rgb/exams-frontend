@@ -1,17 +1,18 @@
 import { error } from '@sveltejs/kit';
-import unidecode from 'unidecode';
 import { data } from '../../../../stores';
 import { get } from 'svelte/store';
+import { slugify } from 'transliteration';
 
 export function load({ params }) {
   const getDataStore = get(data);
 
   const urlTopic = params.topic;
 
+  console.log(getDataStore);
   if (getDataStore) {
     console.log('here layout ts');
     const questionSubset = getDataStore.filter((x) => {
-      const normalizedTopic = unidecode(x.tema).toLowerCase().replaceAll(' ', '-');
+      const normalizedTopic = slugify(x.tema);
       return urlTopic === normalizedTopic;
     });
     const totalQuestions = questionSubset.length;

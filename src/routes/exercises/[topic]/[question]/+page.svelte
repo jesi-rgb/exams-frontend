@@ -6,7 +6,7 @@
 	import { fly } from 'svelte/transition';
 
 	export let data;
-	const type = data.question._type;
+	$: type = data.question._type;
 
 	let visible = false;
 	onMount(() => (visible = true));

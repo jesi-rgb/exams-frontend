@@ -10,6 +10,7 @@
 	import TopicsButton from '$lib/Components/ui/TopicsButton.svelte';
 
 	export let data;
+	console.log($respuestas);
 
 	const questions = data.questions;
 	const topicUrl = data.topicUrl;

@@ -1,5 +1,5 @@
 <script>
-	import unidecode from 'unidecode';
+	import { slugify } from 'transliteration';
 	export let data;
 
 	const bloques = Object.keys(data);
@@ -26,7 +26,7 @@
 	<div class="mb-20">
 		<div class="font-bold text-4xl mb-4 tracking-tight">{bloque}</div>
 		{#each Object.keys(data[bloque]) as t}
-			<a href={`/exercises/${unidecode(t).toLowerCase().replaceAll(' ', '-')}/1`}>
+			<a href={`/exercises/${slugify(t)}/1`}>
 				<div class="flex space-x-3 text-xl mb-2 btn btn-outline justify-between">
 					<div>{t}</div>
 					<div>
