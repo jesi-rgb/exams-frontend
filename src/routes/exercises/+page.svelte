@@ -27,9 +27,9 @@
 		<div class="font-bold text-4xl mb-4 tracking-tight">{bloque}</div>
 		{#each Object.keys(data[bloque]) as t}
 			<a href={`/exercises/${slugify(t)}/1`}>
-				<div class="flex space-x-3 text-xl mb-2 btn btn-outline justify-between">
-					<div>{t}</div>
-					<div>
+				<div class="flex h-max py-2 xl:space-x-3 text-xl mb-2 btn btn-outline justify-between">
+					<div class="w-full text-left md:w-fit">{t}</div>
+					<div class="text-secondary">
 						{data[bloque][t]}
 						{data[bloque][t] === 1 ? 'pregunta' : 'preguntas'}
 					</div>
