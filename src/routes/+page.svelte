@@ -11,7 +11,7 @@
 		EJERCICIOS DE AUTOCOMPROBACIÓN DE GRAMÁTICA AVANZADA DEL ESPAÑOL
 	</div>
 	<div class="mx-auto w-32 mt-10">
-		<a href="/exercises">
+		<a target="_self" href="/exercises">
 			<div class="btn btn-primary btn-lg w-full">Temas</div>
 		</a>
 	</div>
