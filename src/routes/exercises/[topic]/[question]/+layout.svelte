@@ -11,6 +11,7 @@
 	import { cubicOut } from 'svelte/easing';
 	import { error } from '@sveltejs/kit';
 	import TopicsButtonSmall from '$lib/Components/ui/TopicsButtonSmall.svelte';
+	import TopicsButton from '$lib/Components/ui/TopicsButton.svelte';
 
 	export let data;
 
@@ -20,10 +21,11 @@
 	$: topicUrl = data.topicUrl;
 
 	$: exerciseNumber = data.number;
-	$: nextExercise = (exerciseNumber + 1).toString();
-	$: previousExercise = (exerciseNumber - 1).toString();
+	$: nextExercise = (
+		exerciseNumber + 1 > totalQuestions ? exerciseNumber : exerciseNumber + 1
+	).toString();
+	$: previousExercise = (exerciseNumber - 1 <= 0 ? exerciseNumber : exerciseNumber - 1).toString();
 	$: question = data.question;
-	console.log('question', question);
 
 	let visible: boolean = false;
 	onMount(() => (visible = true));
@@ -49,12 +51,17 @@
 {#if visible && question}
 	<div in:fly={{ y: 20, duration: 1000, easing: cubicOut }}>
 		<TopicsButtonSmall />
-		<ExerciseTitle number={exerciseNumber.toString()} />
+		<ExerciseTitle number={exerciseNumber} />
 		<ExerciseDetails bloque={question.bloque} tema={question.tema} />
 
 		<slot />
 
 		<div class="flex mt-20 justify-between">
+			{#if exerciseNumber <= 1}
+				<a target="_self" href={`/exercises/${topicUrl}/${previousExercise}`}>
+					<TopicsButton />
+				</a>
+			{/if}
 			{#if exerciseNumber > 1}
 				<a target="_self" href={`/exercises/${topicUrl}/${previousExercise}`}>
 					<PreviousButton />
@@ -65,7 +72,7 @@
 					<ContinueButton />
 				</a>
 			{/if}
-			{#if exerciseNumber == totalQuestions}
+			{#if exerciseNumber >= totalQuestions}
 				<a target="_self" href={`/exercises/${topicUrl}/results`}>
 					<FinishButton />
 				</a>

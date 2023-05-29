@@ -22,7 +22,7 @@
 
 		$respuestas[topicUrl][qNumber][idSelect] = value;
 	}}
-	class="select select-md md:select-sm select-primary"
+	class="self-end md:self-center select select-sm select-primary mt-2"
 >
 	{#each options as opt}
 		<option selected={$respuestas[topicUrl][qNumber][idSelect] == opt} value={opt}>{opt}</option>

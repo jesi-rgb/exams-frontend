@@ -16,8 +16,10 @@
 <ol class=" list-decimal">
 	{#each oracionesHighlighted as oracion, i}
 		<li>
-			<div class="flex justify-between items-center md:items-start mb-9">
-				<div class="mr-3 md:mr-0">
+			<div
+				class="flex flex-col md:flex-row justify-start md:justify-between md:items-start mb-14 md:mb-9"
+			>
+				<div class="mr-5 md:mr-0">
 					{@html oracion}
 				</div>
 

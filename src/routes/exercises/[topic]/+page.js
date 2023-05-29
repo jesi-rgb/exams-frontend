@@ -8,8 +8,8 @@ export function load({ params, fetch }) {
     const normalizedTopic = slugify(x.tema);
     return urlTopic === normalizedTopic;
   });
-  console.log(questionSubset);
+
   return {
-    data: questionSubset
+    questions: questionSubset
   };
 }

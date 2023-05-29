@@ -10,14 +10,15 @@ export async function load({ params }) {
   if (get(lastFetchedData) === undefined) {
     lastFetchedData.set(new Date().getTime());
   }
-  const isDataOlderThanDay = Date.now() - get(lastFetchedData) > DAY;
+  // const isDataOlderThanDay = Date.now() - get(lastFetchedData) > DAY;
+  const isDataOlderThanMinute = Date.now() - get(lastFetchedData) > MINUTE;
 
-  if (get(data) === undefined || isDataOlderThanDay) {
+  if (get(data) === undefined || isDataOlderThanMinute) {
     const client = createClient({
       projectId: 'ljxmu3sa',
       dataset: 'production',
       apiVersion: '2021-10-21',
-      useCdn: true
+      useCdn: false
     });
 
     console.log('Making api call');
