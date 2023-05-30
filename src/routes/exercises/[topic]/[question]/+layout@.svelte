@@ -9,7 +9,6 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
-	import { error } from '@sveltejs/kit';
 	import TopicsButtonSmall from '$lib/Components/ui/TopicsButtonSmall.svelte';
 	import TopicsButton from '$lib/Components/ui/TopicsButton.svelte';
 

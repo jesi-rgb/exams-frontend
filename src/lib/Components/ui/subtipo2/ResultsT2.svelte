@@ -7,7 +7,6 @@
 	const oraciones = question.oraciones;
 	const opciones = question.opciones;
 	const respuestas = question.respuesta.map((x: string) => x.split(';'));
-	console.log(respuestas);
 </script>
 
 <div class="">

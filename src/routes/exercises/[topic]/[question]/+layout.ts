@@ -8,9 +8,7 @@ export function load({ params }) {
 
   const urlTopic = params.topic;
 
-  console.log(getDataStore);
   if (getDataStore) {
-    console.log('here layout ts');
     const questionSubset = getDataStore.filter((x) => {
       const normalizedTopic = slugify(x.tema);
       return urlTopic === normalizedTopic;

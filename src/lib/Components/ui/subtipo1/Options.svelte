@@ -18,7 +18,6 @@
 	id={idSelect.toString()}
 	on:change={(e) => {
 		const value = e.target.value;
-		console.log(e, idSelect);
 
 		$respuestas[topicUrl][qNumber][idSelect] = value;
 	}}

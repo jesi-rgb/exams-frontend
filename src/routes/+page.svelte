@@ -5,7 +5,7 @@
 	<title>Ejercicios de gramática</title>
 </svelte:head>
 
-<div class="max-w-md mx-auto">
+<div class="max-w-md mx-auto my-20">
 	<div class="text-center text-primary text-6xl mb-5">Tests Gramática</div>
 	<div class="text-center text-secondary text-xl">
 		EJERCICIOS DE AUTOCOMPROBACIÓN DE GRAMÁTICA AVANZADA DEL ESPAÑOL

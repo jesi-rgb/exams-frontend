@@ -21,7 +21,6 @@ export async function load({ params, fetch }) {
 
       const question = questionSubset[parseInt(params.question) - 1];
 
-      console.log('here page ts');
       return {
         topicUrl: urlTopic,
         number: parseInt(params.question),

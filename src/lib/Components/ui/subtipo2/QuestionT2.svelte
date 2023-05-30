@@ -73,7 +73,6 @@
 								disabled={checkedMap[`${j}.${i}`]}
 								class="input input-primary input-sm w-1/3"
 								on:change={(e) => {
-									console.log(e);
 									const inputField = e.target;
 									$respuestas[topicUrl][qNumber][`${j}.${i}`] = inputField.value.trim();
 								}}
